@@ -32,3 +32,13 @@ Whatever way you choose, I will for this tutorial talk about the *master* branch
 I prefer the website files to reside in a subfolder of my repository, usually */docs*. Go to the settings of your repository, choose *Pages* from the menu, and set the build and deployment source to *Deploy from a branch*, then select your *master* branch and the */docs* folder.
 
 ![Configure your publishing source](/images/github_pages_config.png)
+
+## Step 3: Checkout a new orphan branch
+
+Navigate to your local repository (you're in the master branch), checkout a new *orphan* branch *sources*, and let git remove all its contents:
+
+```
+cd /path/to/your/repository
+git checkout --orphan sources
+git rm -rf .
+```

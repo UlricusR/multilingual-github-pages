@@ -51,7 +51,7 @@ Replace *GITHUB-PAGES-VERSION* with the latest supported version of the `github-
 
 Save and close the gemfile and run `bundle install`.
 
-As your GitHub Page will be hosted in a subdirectory (e.g. for this specific site, https://ulricusr.github.io/*multilingual-github-pages/*), you need to add the `baseurl` to the Jekyll `_config.yml` file in your `/docs` directory: `baseurl: <your repository name>`.
+As your GitHub Page will be hosted in a subdirectory (e.g. for this specific site: ulricusr.github.io/*multilingual-github-pages/*), you need to add the `baseurl` to the Jekyll `_config.yml` file in your `/docs` directory: `baseurl: <your repository name>`.
 
 You can optionally preview your site on [http://localhost:4000](http://localhost:4000) after having run `bundle exec jekyll serve`.
 

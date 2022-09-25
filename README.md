@@ -111,9 +111,10 @@ One downside of this whole approach is that you need to separately commit and pu
 
 Therefore I have prepared the `deploy.sh` bash script (for MacOS - you might need to adapt if for other operating systems), which
 
-- adds, checks in and pushes the source files to the `master` branch of your remote repository,
-- creates the `.nojekyll` file in the `_site` folder and
-- adds, checks in and pushed the site files to the `site` branch of your remote repository.
+1. adds, checks in and pushes the source files to the `master` branch of your remote repository,
+2. builds the site,
+3. creates the `.nojekyll` file in the `_site` folder and
+4. adds, checks in and pushed the site files to the `site` branch of your remote repository.
 
 This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
 

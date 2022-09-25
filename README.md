@@ -109,13 +109,22 @@ The final step is to configure GitHub Pages to deploy your site. Go to the setti
 
 One downside of this whole approach is that you need to separately commit and push your generated site files to the remote `site` branch. In addition, as Jekyll's `bundle exec jekyll build` command will erase the `.nojekyll` file every time it runs, we have to make sure that we don't forget to add it before pushing. This can be cumbersome.
 
-Therefore I have prepared the following bash script (for MacOS - you might need to adapt if for other operating systems), which
+Therefore I have prepared the `deploy.sh` bash script (for MacOS - you might need to adapt if for other operating systems), which
 
 - adds, checks in and pushes the source files to the `master` branch of your remote repository,
 - creates the `.nojekyll` file in the `_site` folder and
 - adds, checks in and pushed the site files to the `site` branch of your remote repository.
 
 This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
+
+To execute the script, you need to set the user permissions before you run it.
+
+```
+# Set execution permissions
+chmod u+x deploy.sh
+# Run the script
+./deploy.sh
+```
 
 ```bash
 #!/bin/bash

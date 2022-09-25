@@ -7,8 +7,22 @@
 ### https://docs.github.com/en/authentication
 ################################################################################
 
-# You have to run this script from the repository's base directory
-if [[ -f ./deploy.sh ]]
-then
-    echo "deploy.sh exists on your filesystem."
+# Sanity checks
+all_is_fine = true
+
+# Check 1: You have to run this script from the directory it resides in
+if ! [[ -f ./deploy.sh ]]; then
+	echo "Error: You need to run this script from the directory deploy.sh resides in."
+	all_is_fine = false
 fi
+
+# Check 2: You have to run this script from the directory it resides in
+if ! [[ ./git status | grep -q 'On branch master' ]]; then
+	echo "Error: You need to be in the master branch of your reäository."
+	all_is_fine = false
+fi
+
+# Evaluate checks
+if ! [[ $all_is_fine ]]; then
+	exit 0
+fi	

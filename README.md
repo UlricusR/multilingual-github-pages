@@ -117,7 +117,7 @@ Therefore I have prepared the following bash script (for MacOS - you might need 
 
 This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
 
-```
+```bash
 #!/bin/bash
 
 ################################################################################

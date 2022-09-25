@@ -10,8 +10,9 @@ You can also use this repository as a blueprint to start your own multi-lingual 
 
 ## Assumptions and Pre-Requisites
 
-- You have a valid GitHub account
+- You have a GitHub account
 - You have git installed on your computer and know how to apply its command line commands (I am working with MacOS terminal, but the git commands should be identical across all platforms)
+- You are [authenticated with GitHub](https://docs.github.com/en/authentication) from your command line
 - You know the difference between GitHub and git
 - You have [Jekyll](https://jekyllrb.com) installed on your computer and are familiar with its basics
 
@@ -103,3 +104,33 @@ Your site files should now reside in the `site` branch in your GitHub repository
 The final step is to configure GitHub Pages to deploy your site. Go to the settings of your repository, choose *Pages* from the menu, and set the build and deployment source to *Deploy from a branch*, then select your `site` branch and keep the `/(root)` folder. Hit save, wait a minute or so (you can always check the deployment progress in the "Actions" tab of your repository), and then check your online site by hitting the "Visit site" button.
 
 ![Configure your publishing source](/images/github_pages_config.png)
+
+## Part II: Updating your GitHub Pages site
+
+One downside of this whole approach is that you need to separately commit and push your generated site files to the remote `site` branch. In addition, as Jekyll's `bundle exec jekyll build` command will erase the `.nojekyll` file every time it runs, we have to make sure that we don't forget to add it before pushing. This can be cumbersome.
+
+Therefore I have prepared the following bash script (for MacOS - you might need to adapt if for other operating systems), which
+
+- adds, checks in and pushes the source files to the `master` branch of your remote repository,
+- creates the `.nojekyll` file in the `_site` folder and
+- adds, checks in and pushed the site files to the `site` branch of your remote repository.
+
+This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
+
+```
+#!/bin/bash
+
+################################################################################
+### Script to deploy the built _site folder to the remote site branch
+###
+### Make sure that you are authenticated with GitHub from the command line:
+### https://docs.github.com/en/authentication
+################################################################################
+
+```
+
+**Under construction**
+
+## Part III: Building the multi-lingual site
+
+**Under construction**

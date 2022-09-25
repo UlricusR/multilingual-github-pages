@@ -218,8 +218,6 @@ git push
 echo "--- done ---"
 ```
 
-**Under construction**
-
 ## Part III: Building the multi-lingual site
 
 **Under construction**

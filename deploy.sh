@@ -11,6 +11,7 @@
 sources_branch="master"
 site_branch="site"
 default_commit_message="Updated site"
+source_directory="docs"
 
 # Sanity checks
 all_is_fine=true
@@ -24,7 +25,7 @@ else
 	echo "Check 1 OK - running in the right directory"
 fi
 
-# Check 2: You have to run this script from the directory it resides in
+# Check 2: We need to be in the sources branch
 if ! git status | grep -q "On branch $sources_branch"
 then
 	echo "Check 2 Error: You need to be in the $sources_branch branch of your repository"
@@ -42,14 +43,47 @@ fi
 
 # Get commit message from the user
 read -p "Enter a commit message (defaults to '$default_commit_message'): " commit_message
-if [[ $commit_message='' ]]
+if [ -z "$commit_message" ]
 then
-	echo "Using default commit message: '$default_commit_message'"
 	commit_message=$default_commit_message
 fi
+echo "Using commit message: '$commit_message'"
 
 # Add, commit and push
 git add -A
 git commit -m "$commit_message"
 git push
-echo "Pushed sources to remote $sources_branch branch"
+
+# Change to the source directory
+if ! [ -z "$source_directory" ]
+then
+	cd "$source_directory"
+	echo "Changed to $(pwd)"
+fi
+
+# Build the site
+bundle exec jekyll build
+
+# Change to the _site folder
+cd _site
+echo "Changed to $(pwd)"
+
+# Check 3: Check for site branch
+if ! git status | grep -q "On branch $site_branch"
+then
+	echo "Check 3 Error: You need to be in the $site_branch branch of your repository - exiting - no site checked in"
+	exit 1
+else
+	echo "Check 3 OK - running in $site_branch branch"
+fi
+
+# Create .nojekyll file
+touch .nojekyll
+
+# Add, commit and push site files
+git add -A
+git commit -m "$commit_message"
+git push
+
+# Done
+echo "--- done ---"

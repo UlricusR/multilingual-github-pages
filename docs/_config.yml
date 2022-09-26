@@ -32,6 +32,13 @@ github_username:  ulricusr
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-polyglot
+
+# Polyglot language plugin settings
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

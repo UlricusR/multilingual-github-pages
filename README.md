@@ -2,7 +2,7 @@
 
 *A step-by-step guide to build a multi-lingual website using Jekyll plugins not supported by GitHub Pages*
 
-GitHub Pages offers great possibilities to host static, version controlled homepages. One downside is the support for only a [limited amount of Jekyll-plugins](https://pages.github.com/versions/). I was especially interested in using the [jekyll-multiple-language-plugin](https://github.com/kurtsson/jekyll-multiple-languages-plugin), because my website needed to be available in English and German.
+GitHub Pages offers great possibilities to host static, version controlled homepages. One downside is the support for only a [limited amount of Jekyll-plugins](https://pages.github.com/versions/). I was especially interested in using the [Polyglot plugin](https://github.com/untra/polyglot), because my website needed to be available in English and German.
 
 As GitHub Pages does not support this specific plugin, I searched for workarounds. The most promising one I found in [Dani's Braindump blog](https://tiefenauer.github.io/blog/gh-pages-plugins/), which I will apply with some modifications. I will describe my experience in setting up a multi-language site in GitHub Pages in the following step-by-step guide.
 
@@ -222,3 +222,36 @@ echo "--- done ---"
 ## Part III: Building the multi-lingual site
 
 **Under construction**
+
+Let's now build our multilingual site using the [Polyglot plugin](https://github.com/untra/polyglot).
+
+### Step 1: Install the plugin
+
+Navigate to your publishing source directory `/docs` and add the following to your `Gemfile`:
+
+```
+group :jekyll_plugins do
+   gem "jekyll-polyglot"
+end
+```
+
+Alternatively, install the gem locally following the description in the Polyglot README. Then specify the plugin in your `_config.yml`:
+
+```
+plugins:
+  - jekyll-polyglot
+```
+
+Run `bundle install` to finalize the installation.
+
+### Step 2: Configure the plugin
+
+Please refer to the Polyglot README for details on the configuration. For my purposes (English as default language, German as second language), the following configuration in `_config.yml` was sufficient:
+
+```
+# Polyglot language plugin settings
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
+```

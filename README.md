@@ -111,9 +111,10 @@ One downside of this whole approach is that you need to separately commit and pu
 
 Therefore I have prepared the `deploy.sh` bash script (for MacOS - you might need to adapt if for other operating systems), which
 
-- adds, checks in and pushes the source files to the `master` branch of your remote repository,
-- creates the `.nojekyll` file in the `_site` folder and
-- adds, checks in and pushed the site files to the `site` branch of your remote repository.
+1. adds, checks in and pushes the source files to the `master` branch of your remote repository,
+2. builds the site,
+3. creates the `.nojekyll` file in the `_site` folder and
+4. adds, checks in and pushed the site files to the `site` branch of your remote repository.
 
 This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
 
@@ -136,9 +137,87 @@ chmod u+x deploy.sh
 ### https://docs.github.com/en/authentication
 ################################################################################
 
-```
+# Variables
+sources_branch="master"
+site_branch="site"
+default_commit_message="Updated site"
+source_directory="docs"
 
-**Under construction**
+# Sanity checks
+all_is_fine=true
+
+# Check 1: You have to run this script from the directory it resides in
+if ! [[ -f ./deploy.sh ]]
+then
+	echo "Check 2 Error: You need to run this script from the directory deploy.sh resides in"
+	all_is_fine=false
+else
+	echo "Check 1 OK - running in the right directory"
+fi
+
+# Check 2: We need to be in the sources branch
+if ! git status | grep -q "On branch $sources_branch"
+then
+	echo "Check 2 Error: You need to be in the $sources_branch branch of your repository"
+	all_is_fine=false
+else
+	echo "Check 2 OK - running in $sources_branch branch"
+fi
+
+# Evaluate checks
+if ! $all_is_fine
+then
+	echo "Exiting - nothing checked in, nothing deployed"
+	exit 1
+fi
+
+# Get commit message from the user
+read -p "Enter a commit message (defaults to '$default_commit_message'): " commit_message
+if [ -z "$commit_message" ]
+then
+	commit_message=$default_commit_message
+fi
+echo "Using commit message: '$commit_message'"
+
+# Add, commit and push
+git add -A
+git commit -m "$commit_message"
+git push
+
+# Change to the source directory
+if ! [ -z "$source_directory" ]
+then
+	cd "$source_directory"
+	echo "Changed to $(pwd)"
+fi
+
+# Build the site
+bundle exec jekyll build
+
+# Change to the _site folder
+cd _site
+echo "Changed to $(pwd)"
+
+# Check 3: Check for site branch
+if ! git status | grep -q "On branch $site_branch"
+then
+	echo "Check 3 Error: You need to be in the $site_branch branch of your repository - exiting - no site checked in"
+	exit 1
+else
+	echo "Check 3 OK - running in $site_branch branch"
+fi
+
+# Create .nojekyll file
+touch .nojekyll
+
+# Add, commit and push site files
+git add -A
+git commit -m "$commit_message"
+git push
+
+# Done
+echo "--- done ---"
+```
 
 ## Part III: Building the multi-lingual site
 

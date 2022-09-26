@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Release notes - version 0.1"
-date:   2022-09-26 18:30:00 +0200
-categories: "GitHub multilingual page" "release notes" pre-release
+date:   2022-09-26 19:28:00 +0200
+categories: multilingual-GitHub-pages release-notes
 ---
 This is the first pre-release of the *GitHub multilingual pages* project.
 
@@ -13,4 +13,4 @@ It includes:
 It does not yet include:
 - Step-by-step description of how to set up a multilingual site using [jekyll-multiple-language-plugin](https://github.com/kurtsson/jekyll-multiple-languages-plugin)
 
-Stay tuned - e.g. by subscribining to this blog via RSS.
+Stay tuned - e.g. by subscribing to this blog via RSS.

@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+permalink: /
 lang: de
 ---
 GitHub Pages ist eine fantastische Plattform für statische, versionskontrollierte Webseiten. Ein Nachteil ist nur sehr begrenzte Anzahl an [unterstützten Jekyll-Plugins](https://pages.github.com/versions/). Ich war besonders am Mehrsprachen-Plugin [Polyglot](https://github.com/untra/polyglot) interessiert, da meine Webseite auf Deutsch und English sein sollte.

@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+permalink: /
 lang: en
 ---
 GitHub Pages offers great possibilities to host static, version controlled homepages. One downside is the support for only a [limited amount of Jekyll-plugins](https://pages.github.com/versions/). I was especially interested in using the multi-language [Polyglot plugin](https://github.com/untra/polyglot), because my website needed to be available in English and German.

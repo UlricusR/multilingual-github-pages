@@ -18,11 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Multi-lingual GitHub Page
+title:
+  en: Multi-lingual GitHub Page
+  de: Mehrsprachige GitHub-Seite
 email: code@rueth.info
-description: >- # this means to ignore newlines until "baseurl:"
-  A sample multi-lingual GitHub Page built with a Jekyll plugin not supported
-  by GitHub Pages.
+description:
+  en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
+  de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+
 baseurl: /multilingual-github-pages # the subpath of your site, e.g. /blog
 url: https://ulricusr.github.io # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
@@ -32,6 +35,13 @@ github_username:  ulricusr
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-polyglot
+
+# Polyglot language plugin settings
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

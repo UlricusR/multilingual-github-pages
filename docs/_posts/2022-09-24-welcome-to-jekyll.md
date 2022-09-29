@@ -6,7 +6,7 @@ categories: jekyll update
 lang: en
 ---
 
-_This is the original Jekyll post after having initialized the Jekyll site. It contains useful information, therefore I'll leave it in._
+_This is the original Jekyll post after having initialized the Jekyll site. It contains useful information, therefore I'll leave it in. Furthermore, this post is not translated on purpose to demonstrate the default post feature of Polyglot._
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

@@ -221,9 +221,7 @@ echo "--- done ---"
 
 ## Part III: Building the multi-lingual site
 
-**Under construction**
-
-Let's now build our multilingual site using the [Polyglot plugin](https://github.com/untra/polyglot).
+Let's now build our multilingual site using the [Polyglot plugin](https://github.com/untra/polyglot). The site is based on Jekyll's `minima` theme, so if you use another theme, the steps might look different in detail, but should be rather similar.
 
 ### Step 1: Install the plugin
 
@@ -252,6 +250,107 @@ Please refer to the Polyglot README for details on the configuration. For my pur
 # Polyglot language plugin settings
 languages: ["en", "de"]
 default_lang: "en"
-exclude_from_localization: ["javascript", "images", "css", "public"]
+exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
 parallel_localization: true
 ```
+
+### Step 3: Localize your metadata
+
+The site will use some metadata like the title or the description, which are stored in the `_config.yml` file. You need to add a language specific title and description:
+
+```
+title:
+  en: Multi-lingual GitHub Page
+  de: Mehrsprachige GitHub-Seite
+description:
+  en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
+  de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+```
+
+The title is used in the `header.html` file of the `minima` theme. Therefore we need to override the remote `header.html` file by creating a `_includes` folder in the top level publishing folder (here: `docs`) and save a copy there. Next, we need to let Jekyll know which language we're in by adding the following line as first line in `header.html`, which creates the variable `lang` and assigns the current language:
+
+```
+{% assign lang = site.active_lang %}
+<header class="site-header">
+	...
+```
+
+Finally, we need to modify the line containing `{{ site.title | escape }}` with `{{ site.title[lang] | escape }}`.
+
+The description is used in the `footer.html` file, so simply repeat the steps above, but replace `{{ site.description | escape }}` with `{{ site.description[lang] | escape }}`.
+
+### Step 4: Localize your pages
+
+Pages are localized by adding one file per language and using the language code to extend the filename. With `en` being the default language and `de` the additional language for this example, we will need to have a `...-en.md` and a `...-de.md` version for each file we want to localize (also works with `html` files).
+
+In addition, we need to add the identical `permalink` and a `lang` tag to the frontmatter of each file.
+
+So, rename your `index.md` to `index-en.md` and add the following lines to the frontmatter:
+
+```
+---
+layout: home
+permalink: /
+lang: en
+---
+```
+
+Duplicate the file and save it as `index-de.md`. Translate the content and add the following lines to the frontmatter:
+
+```
+---
+layout: home
+permalink: /
+lang: de
+---
+```
+
+It is very important to have the permalink identical in all language files.
+
+Repeat the same procedure for all your pages. My `about.md`, for example, becomes `about-en.md` and has the following frontmatter:
+
+```
+---
+layout: page
+title: About
+permalink: /about/
+lang: en
+---
+```
+
+My `about-de.md` has the following frontmatter:
+
+```
+---
+layout: page
+title: Über
+permalink: /about/
+lang: de
+---
+```
+
+### Step 5: Localize your posts
+
+In the `_posts` folder, create a subfolder for each *additional* language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
+
+Don't change the filename of the post in the language subfolder!
+
+Finally, add the `lang` tag in the frontmatter of all posts (also those in the default language).
+
+### Step 6: Add a language switcher
+
+To enable the user to switch between languages, I added a language switcher in `header.html`. Add the following code before the closing `</header>` tag:
+
+```html
+<div class="wrapper">
+	{% assign is_first_language = true %}
+	<!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
+	{% for tongue in site.languages %}
+		{% if is_first_language == false %}|{% endif %}
+		<a {% if tongue == site.active_lang %}style="font-weight: bold;"{% endif %} {% static_href %}href="{% if tongue == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ tongue }}{{page.url}}{% endif %}"{% endstatic_href %} >{{ tongue }}</a>
+		{% assign is_first_language = false %}
+	{% endfor %}
+</div>
+```
+
+Now you should be good to go with your first multilingual Jekyll site.

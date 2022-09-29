@@ -40,7 +40,7 @@ plugins:
 # Polyglot language plugin settings
 languages: ["en", "de"]
 default_lang: "en"
-exclude_from_localization: ["javascript", "images", "css", "public"]
+exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
 parallel_localization: true
 
 # Exclude from processing.

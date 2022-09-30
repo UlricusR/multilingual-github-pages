@@ -43,6 +43,9 @@ default_lang: "en"
 exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
 parallel_localization: true
 
+# Google Analytics
+google_analytics: G-9E8TF530YL
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

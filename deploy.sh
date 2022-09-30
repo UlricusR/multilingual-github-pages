@@ -49,6 +49,16 @@ then
 fi
 echo "Using commit message: '$commit_message'"
 
+# Get JEKYLL_ENV
+jekyll_environment="development"
+read -p "Do you want to build in production environment (default: no)? (y/n) " yn
+case $yn in
+	[yY] ) echo "Running in production environment";
+		jekyll_environment="production";;
+	[nN] ) echo "Running in development environment";;
+	* ) echo "Running in development environment";;
+esac
+
 # Add, commit and push
 git add -A
 git commit -m "$commit_message"
@@ -62,7 +72,7 @@ then
 fi
 
 # Build the site
-bundle exec jekyll build
+JEKYLL_ENV=$jekyll_environment bundle exec jekyll build
 
 # Change to the _site folder
 cd _site

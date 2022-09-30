@@ -279,7 +279,30 @@ Finally, we need to modify the line containing `{{ site.title | escape }}` with 
 
 The description is used in the `footer.html` file, so simply repeat the steps above, but replace `{{ site.description | escape }}` with `{{ site.description[lang] | escape }}`.
 
-### Step 4: Localize your pages
+### Step 4: Localize your title tag
+
+As a last step, we have to take care of the `<title>` tag in Jekyll's built-in SEO section, because the site description is also used there. The title tag is used by search engines, but also by most browsers to name the browser tab. As we cannot pass a custom title to Jekyll's SEO section, we need to disable the display of the title there and create our own `<title>` tag instead.
+
+To do so, we need to override Minima's `head.html` (and along with it the `custom-head.html`, otherwise we'd run into an error when building the site). So copy those two files from Minima's `_includes` folder to your `_includes` folder and open `head.html` for editing (you can leave `custom-head.html` untouched, but may also use for further customizations like adding a favicon).
+
+Modify the line `{%- seo -%}` to `{%- seo title=false -%}`.
+
+> For some reason, which I didn't dig in deeper, overriding `head.html` lead to my site no longer finding the right stylesheet. I had to change the line `<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">` to `<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">` to fix it.
+
+Finally, we'll have to add our own custom title in `head.html`. As very first line of the file, set the language by adding `{% assign lang = site.active_lang %}`.
+
+Then add the following code before the modified `{%- seo title=false -%}` line:
+
+```
+<title>
+	{% if page.title %}{{ page.title }} - {% endif %}
+	{% if site.title[lang] %}{{ site.title[lang] }}{% endif %}
+</title>
+```
+
+It will add the page title, if set in the frontmatter of the file, and then append the localized site title, separated by a slash.
+
+### Step 5: Localize your pages
 
 Pages are localized by adding one file per language and using the language code to extend the filename. With `en` being the default language and `de` the additional language for this example, we will need to have a `...-en.md` and a `...-de.md` version for each file we want to localize (also works with `html` files).
 
@@ -329,7 +352,7 @@ lang: de
 ---
 ```
 
-### Step 5: Localize your posts
+### Step 6: Localize your posts
 
 In the `_posts` folder, create a subfolder for each *additional* language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
 
@@ -337,7 +360,7 @@ Don't change the filename of the post in the language subfolder!
 
 Finally, add the `lang` tag in the frontmatter of all posts (also those in the default language).
 
-### Step 6: Add a language switcher
+### Step 7: Add a language switcher
 
 To enable the user to switch between languages, I added a language switcher in `header.html`. Add the following code before the closing `</header>` tag:
 
@@ -353,4 +376,4 @@ To enable the user to switch between languages, I added a language switcher in `
 </div>
 ```
 
-Now you should be good to go with your first multilingual Jekyll site.
+Deploy your site using the `deploy.sh` script and you should be good to go with your first multilingual Jekyll site.

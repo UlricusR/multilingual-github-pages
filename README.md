@@ -120,6 +120,8 @@ This is more or less the whole updating workflow, so you might also run these co
 
 To execute the script, you need to set the user permissions before you run it.
 
+The script will ask for a commit message (defaults to "Updated site") and also for the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) (defaults to `development`). You need to run it as `production`, if you for example want to include Google Analytics. Normally, GitHub Pages automatically sets the `production` environment, but as we build locally, we need to tell Jekyll ourselves.
+
 ```
 # Set execution permissions
 chmod u+x deploy.sh
@@ -179,6 +181,16 @@ then
 fi
 echo "Using commit message: '$commit_message'"
 
+# Get JEKYLL_ENV
+jekyll_environment="development"
+read -p "Do you want to build in production environment (default: no)? (y/n) " yn
+case $yn in
+	[yY] ) echo "Running in production environment";
+		jekyll_environment="production";;
+	[nN] ) echo "Running in development environment";;
+	* ) echo "Running in development environment";;
+esac
+
 # Add, commit and push
 git add -A
 git commit -m "$commit_message"
@@ -192,7 +204,7 @@ then
 fi
 
 # Build the site
-bundle exec jekyll build
+JEKYLL_ENV=$jekyll_environment bundle exec jekyll build
 
 # Change to the _site folder
 cd _site

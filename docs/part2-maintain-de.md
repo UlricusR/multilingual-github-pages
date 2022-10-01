@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Teil II - Wartung
-permalink: /part2-maintain/
+permalink: "/part2-maintain/"
 lang: de
----
 
-## Part II: Updating your GitHub Pages site
+---
+## Tell II: Pflege Deine GitHub Pages Seite
 
 One downside of this whole approach is that you need to separately commit and push your generated site files to the remote `site` branch. In addition, as Jekyll's `bundle exec jekyll build` command will erase the `.nojekyll` file every time it runs, we have to make sure that we don't forget to add it before pushing. This can be cumbersome.
 
@@ -20,12 +20,10 @@ This is more or less the whole updating workflow, so you might also run these co
 
 To execute the script, you need to set the user permissions before you run it.
 
-```
-# Set execution permissions
-chmod u+x deploy.sh
-# Run the script
-./deploy.sh
-```
+    # Set execution permissions
+    chmod u+x deploy.sh
+    # Run the script
+    ./deploy.sh
 
 The script will ask for a commit message (defaults to "Updated site") and also for the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) (defaults to `development`). You need to run it as `production`, if you for example want to include Google Analytics. Normally, GitHub Pages automatically sets the `production` environment, but as we build locally, we need to tell Jekyll ourselves.
 

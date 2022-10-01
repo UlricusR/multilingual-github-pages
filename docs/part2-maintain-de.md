@@ -7,9 +7,9 @@ lang: de
 ---
 ## Tell II: Pflege Deine GitHub Pages Seite
 
-One downside of this whole approach is that you need to separately commit and push your generated site files to the remote `site` branch. In addition, as Jekyll's `bundle exec jekyll build` command will erase the `.nojekyll` file every time it runs, we have to make sure that we don't forget to add it before pushing. This can be cumbersome.
+Ein Nachteil des ganzen Vorgehens ist, dass man die generierten Seitendateien separat einchecken und auf den `site` Remote Branch hochladen muss. Außerdem löscht Jekyll bei jedem neuen Built die `.nojekyll`-Datei, sodass wir sie jedes Mal neu anlegen müssen. Das wird schnell mühsam.
 
-Therefore I have prepared the `deploy.sh` bash script (for MacOS - you might need to adapt if for other operating systems), which
+Daher habe ich ein `deploy.sh` bash script (für MacOS, ggf. anzupassen) vorbereitet, welches
 
 1. adds, checks in and pushes the source files to the `master` branch of your remote repository,
 2. builds the site,

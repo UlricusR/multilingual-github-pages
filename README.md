@@ -54,7 +54,7 @@ Save and close the gemfile and run `bundle install`.
 
 As your GitHub Page will be hosted in a subdirectory (e.g. for this specific site: ulricusr.github.io/*multilingual-github-pages/*), you need to add the `baseurl` to the Jekyll `_config.yml` file in your `/docs` directory: `baseurl: <your repository name>`.
 
-You can optionally preview your site on [http://localhost:4000](http://localhost:4000) after having run `bundle exec jekyll serve`.
+You can optionally preview your site on [http://localhost:4000/multilingual-github-pages](http://localhost:4000/multilingual-github-pages) after having run `bundle exec jekyll serve`.
 
 Finally build your site using `bundle exec jekyll build`. This will create a `_site` folder, which should already be listed in your `.gitignore` file. If not, do so.
 
@@ -312,9 +312,32 @@ Then add the following code before the modified `{%- seo title=false -%}` line:
 </title>
 ```
 
-It will add the page title, if set in the frontmatter of the file, and then append the localized site title, separated by a slash.
+It will add the page title, if set in the frontmatter of the file, and then append the localized site title, separated by a dash.
 
-### Step 5: Localize your pages
+### Step 5: Localize your main menu
+
+Minima allows you to define the order of the top menu items by adding those to `_config.yml`. We need to do this for all languages:
+
+```
+# Top menu order
+header_pages:
+  en:
+    - about-en.md
+    - prerequisites-en.md
+    - part1-setup-en.md
+    - part2-maintain-en.md
+    - part3-multilingual-en.md
+  de:
+    - about-de.md
+    - prerequisites-de.md
+    - part1-setup-de.md
+    - part2-maintain-de.md
+    - part3-multilingual-de.md
+```
+
+Next, in `header.html` change `{%- assign page_paths = site.header_pages | default: default_paths -%}` to `{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}`.
+
+### Step 6: Localize your pages
 
 Pages are localized by adding one file per language and using the language code to extend the filename. With `en` being the default language and `de` the additional language for this example, we will need to have a `...-en.md` and a `...-de.md` version for each file we want to localize (also works with `html` files).
 
@@ -364,7 +387,7 @@ lang: de
 ---
 ```
 
-### Step 6: Localize your posts
+### Step 7: Localize your posts
 
 In the `_posts` folder, create a subfolder for each *additional* language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
 
@@ -372,7 +395,7 @@ Don't change the filename of the post in the language subfolder!
 
 Finally, add the `lang` tag in the frontmatter of all posts (also those in the default language).
 
-### Step 7: Add a language switcher
+### Step 8: Add a language switcher
 
 To enable the user to switch between languages, I added a language switcher in `header.html`. Add the following code before the closing `</header>` tag:
 

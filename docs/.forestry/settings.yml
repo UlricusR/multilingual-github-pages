@@ -10,7 +10,7 @@ sections:
 - type: jekyll-posts
   label: Posts
   create: all
-upload_dir: docs/uploads
+upload_dir: docs/assets/images
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false

@@ -57,26 +57,28 @@ Nun müssen wir noch die Zeile `{% raw %}{{ site.title | escape }}{% endraw %}` 
 
 Die Beschreibung wird in der `footer.html`-Datei genutzt. Daher wiederholen wir die gleichen Schritte dort, aber ersetzen die Zeile `{% raw %}{{ site.description | escape }}{% endraw %}` mit `{% raw %}{{ site.description[lang] | escape }}{% endraw %}`.
 
-### Step 4: Localize your title tag
+### Schritt 4: Lokalisiere den Titel-Tag
 
-As a last step, we have to take care of the `<title>` tag in Jekyll's built-in SEO section, because the site description is also used there. The title tag is used by search engines, but also by most browsers to name the browser tab. As we cannot pass a custom title to Jekyll's SEO section, we need to disable the display of the title there and create our own `<title>` tag instead.
+Als nächsten Schritt müssen wir uns um den `<title>`-Tag in Jekylls eingebautem SEO-Abschnitt kümmern, weil die Seitenbeschreibung dort ebenfalls genutzt wird. Der Titel-Tag wird von Suchmaschinen benötigt, aber auch von den meisten Browsern als Tab-Bezeichnung genutzt. Da wir Jekyll keinen modifizierten Titel mitgeben können, müssen wir den diesen dort deaktivieren und stattdessen unseren eigenen Titel-Tag ausgeben.
 
-To do so, we need to override Minima's `head.html` (and along with it the `custom-head.html`, otherwise we'd run into an error when building the site). So copy those two files from Minima's `_includes` folder to your `_includes` folder and open `head.html` for editing (you can leave `custom-head.html` untouched, but may also use for further customizations like adding a favicon).
+Dafür müssen wir Minimas `head.html`-Datei überschreiben (und zusätzlich die `custom-head.html`-Datei, sonst gibt es eine Fehlermeldung). Kopiere also beide Dateien aus Minimas Repository in Dein `_includes`-Verzeichnis und bearbeite `head.html` (`custom-head.html` kannst Du unberührt lassen, aber später für weitere Anpassungen, z.B. ein Favicon, nutzen).
 
-Modify the line `{% raw %}{%- seo -%}{% endraw %}` to `{% raw %}{%- seo title=false -%}{% endraw %}`.
+Ersetze die Zeile `{% raw %}{%- seo -%}{% endraw %}` mit `{% raw %}{%- seo title=false -%}{% endraw %}`.
 
-> For some reason, which I didn't dig in deeper, overriding `head.html` lead to my site no longer finding the right stylesheet. I had to change the line `<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">` to `<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">` to fix it.
+> Aus irgendwelchen Gründen, die ich nicht weiter verfolgt habe, hat das Überschreiben von `head.html` zu einem korrupten Stylesheet-Link geführt. Ich musste die Zeile `<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">` zu `<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">` ändern, um das zu reparieren.
 
-Finally, we'll have to add our own custom title in `head.html`. As very first line of the file, set the language by adding `{% raw %}{% assign lang = site.active_lang %}{% endraw %}`.
+Nun musst Du noch Deinen eigenen Titel-Tag in  `head.html` hinzufügen. Als erste Zeile lassen wir Jekyll wieder die Sprache wissen:
 
-Then add the following code before the modified `{% raw %}{%- seo title=false -%}{% endraw %}` line:
+`{% raw %}{% assign lang = site.active_lang %}{% endraw %}`
+
+Dann füge den folgenden Code am besten vor der Zeile `{% raw %}{%- seo title=false -%}{% endraw %}` ein:
 
     {% raw %}<title>
       {% if page.title %}{{ page.title }} - {% endif %}
       {% if site.title[lang] %}{{ site.title[lang] }}{% endif %}
     </title>{% endraw %}
 
-It will add the page title, if set in the frontmatter of the file, and then append the localized site title, separated by a slash.
+Dadurch wird der Seitentitel gesetzt, falls im frontmatter der Datei definiert, und dann der lokalisierte Webseitentitel angehängt, getrennt durch einen Bindestrich.
 
 ### Step 5: Localize your main menu
 

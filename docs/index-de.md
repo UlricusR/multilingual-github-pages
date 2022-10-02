@@ -8,4 +8,4 @@ lang: de
 ---
 GitHub Pages ist eine fantastische Plattform für statische, versionskontrollierte Webseiten. Ein Nachteil ist nur sehr begrenzte Anzahl an [unterstützten Jekyll-Plugins](https://pages.github.com/versions/). Ich war besonders am Mehrsprachen-Plugin [Polyglot](https://github.com/untra/polyglot) interessiert, da meine Webseite auf Deutsch und English sein sollte.
 
-Da GitHub Pages dieses Plugin (und viele andere) nicht unterstützt, benötigte ich einen Workaround. Den vielversprechendsten fand ich in [Dani's Braindump](https://tiefenauer.github.io/blog/gh-pages-plugins/), wobei ich den Ansatz verändert habe. Im README meines [GitHub-Repositorys](https://github.com/UlricusR/multilingual-github-pages) beschreibe ich das Vorgehen Schritt für Schritt.
+Da GitHub Pages dieses Plugin (und viele andere) nicht unterstützt, benötigte ich einen Workaround. Den vielversprechendsten fand ich in [Dani's Braindump](https://tiefenauer.github.io/blog/gh-pages-plugins/), wobei ich den Ansatz verändert habe. Auf diesen Seiten beschreibe ich das Vorgehen Schritt für Schritt. Die Seiten sind gleichzeitig die Beispielseiten für dieses Projekt.

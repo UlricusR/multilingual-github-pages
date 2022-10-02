@@ -46,6 +46,21 @@ parallel_localization: true
 # Google Analytics
 google_analytics: G-9E8TF530YL
 
+# Top menu order
+header_pages:
+  en:
+    - about-en.md
+    - prerequisites-en.md
+    - part1-setup-en.md
+    - part2-maintain-en.md
+    - part3-multilingual-en.md
+  de:
+    - about-de.md
+    - prerequisites-de.md
+    - part1-setup-de.md
+    - part2-maintain-de.md
+    - part3-multilingual-de.md
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

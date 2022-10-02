@@ -36,9 +36,9 @@ Bitte lies im Polyglot README nach, wie man das Plugin konfiguriert. Für meine 
     exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
     parallel_localization: true
 
-### Step 3: Localize your metadata
+### Schritt 3: Lokalisiere Deine Metadaten
 
-The site will use some metadata like the title or the description, which are stored in the `_config.yml` file. You need to add a language specific title and description:
+Die Seite nutzt einige Metadaten wir Titel oder Beschreibung, die in der `_config.yml`-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel und eine Beschreibung hinzufügen:
 
     title:
       en: Multi-lingual GitHub Page
@@ -47,15 +47,15 @@ The site will use some metadata like the title or the description, which are sto
       en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
       de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
 
-The title is used in the `header.html` file of the `minima` theme. Therefore we need to override the remote `header.html` file by creating a `_includes` folder in the top level publishing folder (here: `docs`) and save a copy there. Next, we need to let Jekyll know which language we're in by adding the following line as first line in `header.html`, which creates the variable `lang` and assigns the current language:
+Der Titel wird in der `header.html`-Datei des `minima`-Themas genutzt. Daher müssen wir dieses "überschreiben" (override), indem wir einen `_includes`-Ordner im Veröffentlichungsquellverzeichnis `docs` anlegen und dort eine Kopie der Datei aus dem Repositorys des Themas speichern. Dann müssen wir Jekyll in der ersten Zeile der Datei die Sprache wissen lassen, in der wir uns befinden, indem wir diese der Variablen `lang` zuweisen:
 
     {% raw %}{% assign lang = site.active_lang %}{% endraw %}
     <header class="site-header">
     	...
 
-Finally, we need to modify the line containing `{% raw %}{{ site.title | escape }}{% endraw %}` with `{% raw %}{{ site.title[lang] | escape }}{% endraw %}`.
+Nun müssen wir noch die Zeile `{% raw %}{{ site.title | escape }}{% endraw %}` mit der Zeile `{% raw %}{{ site.title[lang] | escape }}{% endraw %}` ersetzen.
 
-The description is used in the `footer.html` file, so simply repeat the steps above, but replace `{% raw %}{{ site.description | escape }}{% endraw %}` with `{% raw %}{{ site.description[lang] | escape }}{% endraw %}`.
+Die Beschreibung wird in der `footer.html`-Datei genutzt. Daher wiederholen wir die gleichen Schritte dort, aber ersetzen die Zeile `{% raw %}{{ site.description | escape }}{% endraw %}` mit `{% raw %}{{ site.description[lang] | escape }}{% endraw %}`.
 
 ### Step 4: Localize your title tag
 

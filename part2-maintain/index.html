@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Part II - Maintain - 
+    Multi-lingual GitHub Page
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Part II - Maintain" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<meta property="og:description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<link rel="canonical" href="https://ulricusr.github.io/multilingual-github-pages/part2-maintain/" />
+<meta property="og:url" content="https://ulricusr.github.io/multilingual-github-pages/part2-maintain/" />
+<meta property="og:site_name" content="{“en”=&gt;”Multi-lingual GitHub Page”, “de”=&gt;”Mehrsprachige GitHub-Seite”}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Part II - Maintain" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}","headline":"Part II - Maintain","url":"https://ulricusr.github.io/multilingual-github-pages/part2-maintain/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/multilingual-github-pages/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://ulricusr.github.io/multilingual-github-pages/feed.xml" title="{&quot;en&quot;=&gt;&quot;Multi-lingual GitHub Page&quot;, &quot;de&quot;=&gt;&quot;Mehrsprachige GitHub-Seite&quot;}" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-9E8TF530YL', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/multilingual-github-pages/">Multi-lingual GitHub Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/multilingual-github-pages/about/">About</a><a class="page-link" href="/multilingual-github-pages/prerequisites/">Pre-requisites</a><a class="page-link" href="/multilingual-github-pages/part1-setup/">Part I - Setup</a><a class="page-link" href="/multilingual-github-pages/part2-maintain/">Part II - Maintain</a><a class="page-link" href="/multilingual-github-pages/part3-multilingual/">Part III - Multilingual</a></div>
+      </nav></div>
+  <div class="wrapper">
+    
+    <!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
+    
+      
+      <a style="font-weight: bold;" href="/multilingual-github-pages/part2-maintain/" >en</a>
+      
+    
+      |
+      <a  href="/multilingual-github-pages/de/part2-maintain/" >de</a>
+      
+    
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Part II - Maintain</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="part-ii-updating-your-github-pages-site">Part II: Updating your GitHub Pages site</h2>
+
+<p>One downside of this whole approach is that you need to separately commit and push your generated site files to the remote <code class="language-plaintext highlighter-rouge">site</code> branch. In addition, as Jekyll’s <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> command will erase the <code class="language-plaintext highlighter-rouge">.nojekyll</code> file every time it runs, we have to make sure that we don’t forget to add it before pushing. This can be cumbersome.</p>
+
+<p>Therefore I have prepared the <code class="language-plaintext highlighter-rouge">deploy.sh</code> bash script (for MacOS - you might need to adapt if for other operating systems), which</p>
+
+<ol>
+  <li>adds, checks in and pushes the source files to the <code class="language-plaintext highlighter-rouge">master</code> branch of your remote repository,</li>
+  <li>builds the site,</li>
+  <li>creates the <code class="language-plaintext highlighter-rouge">.nojekyll</code> file in the <code class="language-plaintext highlighter-rouge">_site</code> folder and</li>
+  <li>adds, checks in and pushed the site files to the <code class="language-plaintext highlighter-rouge">site</code> branch of your remote repository.</li>
+</ol>
+
+<p>This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.</p>
+
+<p>To execute the script, you need to set the user permissions before you run it.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Set execution permissions
+chmod u+x deploy.sh
+# Run the script
+./deploy.sh
+</code></pre></div></div>
+
+<p>The script will ask for a commit message (defaults to “Updated site”) and also for the <a href="https://jekyllrb.com/docs/configuration/environments/">Jekyll environment</a> (defaults to <code class="language-plaintext highlighter-rouge">development</code>). You need to run it as <code class="language-plaintext highlighter-rouge">production</code>, if you for example want to include Google Analytics. Normally, GitHub Pages automatically sets the <code class="language-plaintext highlighter-rouge">production</code> environment, but as we build locally, we need to tell Jekyll ourselves.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c">################################################################################</span>
+<span class="c">### Script to deploy the built _site folder to the remote site branch</span>
+<span class="c">###</span>
+<span class="c">### Make sure that you are authenticated with GitHub from the command line:</span>
+<span class="c">### https://docs.github.com/en/authentication</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># Variables</span>
+<span class="nv">sources_branch</span><span class="o">=</span><span class="s2">"master"</span>
+<span class="nv">site_branch</span><span class="o">=</span><span class="s2">"site"</span>
+<span class="nv">default_commit_message</span><span class="o">=</span><span class="s2">"Updated site"</span>
+<span class="nv">source_directory</span><span class="o">=</span><span class="s2">"docs"</span>
+
+<span class="c"># Sanity checks</span>
+<span class="nv">all_is_fine</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="c"># Check 1: You have to run this script from the directory it resides in</span>
+<span class="k">if</span> <span class="o">!</span> <span class="o">[[</span> <span class="nt">-f</span> ./deploy.sh <span class="o">]]</span>
+<span class="k">then
+	</span><span class="nb">echo</span> <span class="s2">"Check 2 Error: You need to run this script from the directory deploy.sh resides in"</span>
+	<span class="nv">all_is_fine</span><span class="o">=</span><span class="nb">false
+</span><span class="k">else
+	</span><span class="nb">echo</span> <span class="s2">"Check 1 OK - running in the right directory"</span>
+<span class="k">fi</span>
+
+<span class="c"># Check 2: We need to be in the sources branch</span>
+<span class="k">if</span> <span class="o">!</span> git status | <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"On branch </span><span class="nv">$sources_branch</span><span class="s2">"</span>
+<span class="k">then
+	</span><span class="nb">echo</span> <span class="s2">"Check 2 Error: You need to be in the </span><span class="nv">$sources_branch</span><span class="s2"> branch of your repository"</span>
+	<span class="nv">all_is_fine</span><span class="o">=</span><span class="nb">false
+</span><span class="k">else
+	</span><span class="nb">echo</span> <span class="s2">"Check 2 OK - running in </span><span class="nv">$sources_branch</span><span class="s2"> branch"</span>
+<span class="k">fi</span>
+
+<span class="c"># Evaluate checks</span>
+<span class="k">if</span> <span class="o">!</span> <span class="nv">$all_is_fine</span>
+<span class="k">then
+	</span><span class="nb">echo</span> <span class="s2">"Exiting - nothing checked in, nothing deployed"</span>
+	<span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># Get commit message from the user</span>
+<span class="nb">read</span> <span class="nt">-p</span> <span class="s2">"Enter a commit message (defaults to '</span><span class="nv">$default_commit_message</span><span class="s2">'): "</span> commit_message
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$commit_message</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+	</span><span class="nv">commit_message</span><span class="o">=</span><span class="nv">$default_commit_message</span>
+<span class="k">fi
+</span><span class="nb">echo</span> <span class="s2">"Using commit message: '</span><span class="nv">$commit_message</span><span class="s2">'"</span>
+
+<span class="c"># Get JEKYLL_ENV</span>
+<span class="nv">jekyll_environment</span><span class="o">=</span><span class="s2">"development"</span>
+<span class="nb">read</span> <span class="nt">-p</span> <span class="s2">"Do you want to build in production environment (default: no)? (y/n) "</span> yn
+<span class="k">case</span> <span class="nv">$yn</span> <span class="k">in</span>
+	<span class="o">[</span>yY] <span class="p">)</span> <span class="nb">echo</span> <span class="s2">"Running in production environment"</span><span class="p">;</span>
+		<span class="nv">jekyll_environment</span><span class="o">=</span><span class="s2">"production"</span><span class="p">;;</span>
+	<span class="o">[</span>nN] <span class="p">)</span> <span class="nb">echo</span> <span class="s2">"Running in development environment"</span><span class="p">;;</span>
+	<span class="k">*</span> <span class="p">)</span> <span class="nb">echo</span> <span class="s2">"Running in development environment"</span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="c"># Add, commit and push</span>
+git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$commit_message</span><span class="s2">"</span>
+git push
+
+<span class="c"># Change to the source directory</span>
+<span class="k">if</span> <span class="o">!</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$source_directory</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+	</span><span class="nb">cd</span> <span class="s2">"</span><span class="nv">$source_directory</span><span class="s2">"</span>
+	<span class="nb">echo</span> <span class="s2">"Changed to </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>
+<span class="k">fi</span>
+
+<span class="c"># Build the site</span>
+<span class="nv">JEKYLL_ENV</span><span class="o">=</span><span class="nv">$jekyll_environment</span> bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># Change to the _site folder</span>
+<span class="nb">cd </span>_site
+<span class="nb">echo</span> <span class="s2">"Changed to </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># Check 3: Check for site branch</span>
+<span class="k">if</span> <span class="o">!</span> git status | <span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"On branch </span><span class="nv">$site_branch</span><span class="s2">"</span>
+<span class="k">then
+	</span><span class="nb">echo</span> <span class="s2">"Check 3 Error: You need to be in the </span><span class="nv">$site_branch</span><span class="s2"> branch of your repository - exiting - no site checked in"</span>
+	<span class="nb">exit </span>1
+<span class="k">else
+	</span><span class="nb">echo</span> <span class="s2">"Check 3 OK - running in </span><span class="nv">$site_branch</span><span class="s2"> branch"</span>
+<span class="k">fi</span>
+
+<span class="c"># Create .nojekyll file</span>
+<span class="nb">touch</span> .nojekyll
+
+<span class="c"># Add, commit and push site files</span>
+git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$commit_message</span><span class="s2">"</span>
+git push
+
+<span class="c"># Done</span>
+<span class="nb">echo</span> <span class="s2">"--- done ---"</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/multilingual-github-pages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/multilingual-github-pages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/ulricusr"><svg class="svg-icon"><use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ulricusr</span></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

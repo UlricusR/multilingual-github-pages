@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Teil I - Einrichtung - 
+    Mehrsprachige GitHub-Seite
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Teil I - Einrichtung" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<meta property="og:description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<link rel="canonical" href="https://ulricusr.github.io/multilingual-github-pages/de/part1-setup/" />
+<meta property="og:url" content="https://ulricusr.github.io/multilingual-github-pages/part1-setup/" />
+<meta property="og:site_name" content="{“en”=&gt;”Multi-lingual GitHub Page”, “de”=&gt;”Mehrsprachige GitHub-Seite”}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Teil I - Einrichtung" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}","headline":"Teil I - Einrichtung","url":"https://ulricusr.github.io/multilingual-github-pages/part1-setup/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/multilingual-github-pages/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://ulricusr.github.io/multilingual-github-pages/de/feed.xml" title="{&quot;en&quot;=&gt;&quot;Multi-lingual GitHub Page&quot;, &quot;de&quot;=&gt;&quot;Mehrsprachige GitHub-Seite&quot;}" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-9E8TF530YL', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/multilingual-github-pages/de/">Mehrsprachige GitHub-Seite</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/multilingual-github-pages/de/about/">Über</a><a class="page-link" href="/multilingual-github-pages/de/prerequisites/">Voraussetzungen</a><a class="page-link" href="/multilingual-github-pages/de/part1-setup/">Teil I - Einrichtung</a><a class="page-link" href="/multilingual-github-pages/de/part2-maintain/">Teil II - Wartung</a><a class="page-link" href="/multilingual-github-pages/de/part3-multilingual/">Teil III - Mehrsprachigkeit</a></div>
+      </nav></div>
+  <div class="wrapper">
+    
+    <!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
+    
+      
+      <a  href="/multilingual-github-pages/part1-setup/" >en</a>
+      
+    
+      |
+      <a style="font-weight: bold;" href="/multilingual-github-pages/de/part1-setup/" >de</a>
+      
+    
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Teil I - Einrichtung</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="teil-i-erstelle-deine-github-pages-seite">Teil I: Erstelle Deine GitHub Pages Seite</h2>
+
+<h3 id="schritt-1-erstelle-ein-neues-github-repository">Schritt 1: Erstelle ein neues GitHub-Repository</h3>
+
+<p>Erstelle ein neues GitHub-Repository. Es wird automatisch den <code class="language-plaintext highlighter-rouge">main</code>-Branch anlegen. Ich habe diesen zu <code class="language-plaintext highlighter-rouge">master</code> umbenannt. Mach auch Du das und klone ihn dann auf Deinen Computer (oder behalte <code class="language-plaintext highlighter-rouge">main</code> bei, ersetze dann aber alle <code class="language-plaintext highlighter-rouge">master</code> in diesem Tutorial durch <code class="language-plaintext highlighter-rouge">main</code>).</p>
+
+<h3 id="schritt-2-erstelle-einen-ordner-für-deine-quelldateien">Schritt 2: Erstelle einen Ordner für Deine Quelldateien</h3>
+
+<p>Wechsle in Dein lokales Repository (Du müsstest im master-Branch sein) und erstelle ein <code class="language-plaintext highlighter-rouge">/docs</code>-Verzeichnis.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /pfad/zu/deinem/repository
+mkdir docs
+cd docs
+</code></pre></div></div>
+
+<h3 id="schritt-3-erstelle-eine-neue-jekyll-seite">Schritt 3: Erstelle eine neue Jekyll-Seite</h3>
+
+<p>Wir nutzen den erstellten Ordner als Publishing-Source und erstellen dort eine neue Jekyll-Seite.</p>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll new --skip-bundle .</code></p>
+
+<p>Öffne das gemfile, das Jekyll erstellt hat, und füge “#” an den Anfang der Zeile hinzu (auskommentieren), die mit  <code class="language-plaintext highlighter-rouge">gem "jekyll"</code> beginnt. Füge dann den GitHub-Pages-Gem hinzu, indem Du die Zeile, die mit <code class="language-plaintext highlighter-rouge"># gem "github-pages"</code> beginnt, bearbeitest. Ändere sie zu:</p>
+
+<p><code class="language-plaintext highlighter-rouge">gem "github-pages", "~&gt; GITHUB-PAGES-VERSION", group: :jekyll_plugins</code></p>
+
+<p>Ersetze hierbei <em>GITHUB-PAGES-VERSION</em> mit der jüngsten unterstützten Version des GitHub-Pages-Gems. Du findest diese hier: “<a href="https://pages.github.com/versions/">Dependency versions.</a>”</p>
+
+<p>Speichere und schließe das gemfile und führe <code class="language-plaintext highlighter-rouge">bundle install</code> aus.</p>
+
+<p>Da sich Deine GitHub-Seite in einem Unterverzeichnis befindet (hier: ulricusr.github.io/<em>multilingual-github-pages/</em>), musst Du die <code class="language-plaintext highlighter-rouge">baseurl</code> zu Jekzlls Konfigurationsdatei <code class="language-plaintext highlighter-rouge">_config.yml</code> in Deinem <code class="language-plaintext highlighter-rouge">/docs</code>-Verzeichnis hinzufügen: <code class="language-plaintext highlighter-rouge">baseurl: &lt;Dein Repository-Name&gt;</code>.</p>
+
+<p>Optional kannst Du Deine Seite jederzeit lokal anzeigen lassen auf <a href="http://localhost:4000/multilingual-github-pages">http://localhost:4000/multilingual-github-pages</a>, nachdem Du <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> ausgeführt hast.</p>
+
+<p>Lasse die Seite schließlich mit <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> erstellen. Dies erzeugt einen <code class="language-plaintext highlighter-rouge">_site</code>-Ordner, der bereits in Deiner <code class="language-plaintext highlighter-rouge">.gitignore</code>-Datei eingetragen sein sollte. Falls nicht, mach es.</p>
+
+<h3 id="schritt-4-checke-deine-quelldateien-in-dein-gihub-repository-ein">Schritt 4: Checke Deine Quelldateien in Dein GiHub-Repository ein</h3>
+
+<p>Gehe dazu in das Wurzelverzeichnis Deines lokalen git-Repositorys, füge die erstellten Dateien hinzu (add) und checke sie ein (commit - inkl. des <code class="language-plaintext highlighter-rouge">/docs</code>-Verzeichnisses und unter Ausschluss des <code class="language-plaintext highlighter-rouge">/docs/_site</code>-Verzeichnisses). Lade sie schließlich in Dein Remote-Repository hoch (push).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ..
+git add -A
+git commit -m "Initial commit"
+git push
+</code></pre></div></div>
+
+<p>Deine Quelldateien sollten sich nun in Deinem GitHub-Repository befinden. Nun kümmern wir uns um die generierten Seiten-Dateien.</p>
+
+<h3 id="schritt-5-erstelle-ein-neues-lokales-repository-für-deine-seitendateien">Schritt 5: Erstelle ein neues lokales Repository für Deine Seitendateien</h3>
+
+<p>Wechsle zu <code class="language-plaintext highlighter-rouge">/docs/_site</code> und initialisiere ein neues lokales Repository mit dem gleichen Remote-Repository wie oben.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd docs/_site/
+git init .
+git remote add origin https://github.com/&lt;dein-benutzername&gt;/&lt;dein-repo-name&gt;
+</code></pre></div></div>
+
+<p>Da die Seitendateien in einen separaten <code class="language-plaintext highlighter-rouge">site</code>-Branch hochgeladen werden sollen, müssen wir diesen erstellen mittels <code class="language-plaintext highlighter-rouge">git branch site</code>.</p>
+
+<h3 id="schritt-6-bereite-deine-seitendateien-vor-und-lade-sie-in-dein-remote-repository-hoch">Schritt 6: Bereite Deine Seitendateien vor und lade sie in Dein Remote-Repository hoch</h3>
+
+<p>Bevor wir Deine Seitendateien hochladen, müssen wir noch eine neue, leere Datei namens <code class="language-plaintext highlighter-rouge">.nojekyll</code> erstellen. Sie stellt sicher, dass GitHub Pages die Seitendateien nicht prozessiert, sondern wie hochgeladen ausrollt.</p>
+
+<p><code class="language-plaintext highlighter-rouge">touch .nojekyll</code></p>
+
+<p>Füge nun alle Seitendateien zu Deinem Repository hinzu, checke sie ein und lade sie in Dein Remote-Repository hoch. Da der Branch auf GitHub noch nicht existiert, müssen wir ihn mittels der <code class="language-plaintext highlighter-rouge">-u</code>-Option erstellen.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
+git commit -m "Initial commit"
+git push -u origin site
+</code></pre></div></div>
+
+<p>Deine Seiten-Dateien sollten sich nun im <code class="language-plaintext highlighter-rouge">site</code>-Branch Deines GitHub-Repositorys befinden.</p>
+
+<h3 id="schritt-7-konfiguriere-githubs-veröffentlichungsquelle">Schritt 7: Konfiguriere GitHubs Veröffentlichungsquelle</h3>
+
+<p>Der letzte Schritt ist, die Veröffentlichungsquelle (publishing source) in GitHub zu konfigurieren. Gehe dazu zu den Einstellungen Deines Repositorys, wähle <em>Pages</em> im Menü, und stelle die build and deployment source auf <em>Deploy from a branch</em>. Wähle dann Deinen <code class="language-plaintext highlighter-rouge">site</code>-Branch aus und behalte den <code class="language-plaintext highlighter-rouge">/(root)</code>-Ordner bei. Speichere, warte ca. eine Minute und prüfen dann Deinen Onlinepräsenz mittels des “Visit site”-Knopfs.</p>
+
+<p><img src="/multilingual-github-pages/assets/images/github_pages_config.png" alt="Configure your publishing source" /></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/multilingual-github-pages/de/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/multilingual-github-pages/de/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/ulricusr"><svg class="svg-icon"><use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ulricusr</span></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Teil III - Mehrsprachigkeit - 
+    Mehrsprachige GitHub-Seite
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Teil III - Mehrsprachigkeit" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<meta property="og:description" content="{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}" />
+<link rel="canonical" href="https://ulricusr.github.io/multilingual-github-pages/de/part3-multilingual/" />
+<meta property="og:url" content="https://ulricusr.github.io/multilingual-github-pages/part3-multilingual/" />
+<meta property="og:site_name" content="{“en”=&gt;”Multi-lingual GitHub Page”, “de”=&gt;”Mehrsprachige GitHub-Seite”}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Teil III - Mehrsprachigkeit" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"{“en”=&gt;”A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.”, “de”=&gt;”Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin”}","headline":"Teil III - Mehrsprachigkeit","url":"https://ulricusr.github.io/multilingual-github-pages/part3-multilingual/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/multilingual-github-pages/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://ulricusr.github.io/multilingual-github-pages/de/feed.xml" title="{&quot;en&quot;=&gt;&quot;Multi-lingual GitHub Page&quot;, &quot;de&quot;=&gt;&quot;Mehrsprachige GitHub-Seite&quot;}" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-9E8TF530YL', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+
+</head>
+<body>
+<header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/multilingual-github-pages/de/">Mehrsprachige GitHub-Seite</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/multilingual-github-pages/de/about/">Über</a><a class="page-link" href="/multilingual-github-pages/de/prerequisites/">Voraussetzungen</a><a class="page-link" href="/multilingual-github-pages/de/part1-setup/">Teil I - Einrichtung</a><a class="page-link" href="/multilingual-github-pages/de/part2-maintain/">Teil II - Wartung</a><a class="page-link" href="/multilingual-github-pages/de/part3-multilingual/">Teil III - Mehrsprachigkeit</a></div>
+      </nav></div>
+  <div class="wrapper">
+    
+    <!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
+    
+      
+      <a  href="/multilingual-github-pages/part3-multilingual/" >en</a>
+      
+    
+      |
+      <a style="font-weight: bold;" href="/multilingual-github-pages/de/part3-multilingual/" >de</a>
+      
+    
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Teil III - Mehrsprachigkeit</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="teil-iii-erstelle-die-mehrsprachige-seite">Teil III: Erstelle die mehrsprachige Seite</h2>
+
+<p>Erstellen wir nun die mehrsprachige Seite mit Hilfe des <a href="https://github.com/untra/polyglot">Polyglot-Plugins</a>. Die Seite nutzt das <code class="language-plaintext highlighter-rouge">minima</code>-Thema von Jekyll. Solltest Du ein anderes Thema verwenden, könnten die Schritte im Detail anders aussehen, im Prinzip aber ähnlich sein.</p>
+
+<h3 id="schritt-1-installiere-das-plugin">Schritt 1: Installiere das Plugin</h3>
+
+<p>Gehe in Deine Veröffentlichungsquelle <code class="language-plaintext highlighter-rouge">/docs</code> und füge folgende Zeilen Deinem <code class="language-plaintext highlighter-rouge">Gemfile</code> hinzu</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>group :jekyll_plugins do
+   gem "jekyll-polyglot"
+end
+</code></pre></div></div>
+
+<p>Alternativ kannst Du den gem auch lokal entsprechend der Polyglot README-Datei installieren.</p>
+
+<p>Spezifiziere anschließend das Plugin in Deiner  <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins:
+  - jekyll-polyglot
+</code></pre></div></div>
+
+<p>Lasse <code class="language-plaintext highlighter-rouge">bundle install</code> laufen, um die Installation abzuschließen.</p>
+
+<h3 id="schritt-2-konfiguriere-das-plugin">Schritt 2: Konfiguriere das Plugin</h3>
+
+<p>Bitte lies im Polyglot README nach, wie man das Plugin konfiguriert. Für meine Zwecke (English als Hauptsprache, Deutsch als zweite Sprache) hat folgende Konfiguration in der <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei genügt:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Polyglot language plugin settings
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
+parallel_localization: true
+</code></pre></div></div>
+
+<h3 id="schritt-3-lokalisiere-deine-metadaten">Schritt 3: Lokalisiere Deine Metadaten</h3>
+
+<p>Die Seite nutzt einige Metadaten wir Titel oder Beschreibung, die in der <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel und eine Beschreibung hinzufügen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title:
+  en: Multi-lingual GitHub Page
+  de: Mehrsprachige GitHub-Seite
+description:
+  en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
+  de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+</code></pre></div></div>
+
+<p>Der Titel wird in der <code class="language-plaintext highlighter-rouge">header.html</code>-Datei des <code class="language-plaintext highlighter-rouge">minima</code>-Themas genutzt. Daher müssen wir dieses “überschreiben” (override), indem wir einen <code class="language-plaintext highlighter-rouge">_includes</code>-Ordner im Veröffentlichungsquellverzeichnis <code class="language-plaintext highlighter-rouge">docs</code> anlegen und dort eine Kopie der Datei aus dem Repositorys des Themas speichern. Dann müssen wir Jekyll in der ersten Zeile der Datei die Sprache wissen lassen, in der wir uns befinden, indem wir diese der Variablen <code class="language-plaintext highlighter-rouge">lang</code> zuweisen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign lang = site.active_lang %}
+&lt;header class="site-header"&gt;
+	...
+</code></pre></div></div>
+
+<p>Nun müssen wir noch die Zeile <code class="language-plaintext highlighter-rouge">{{ site.title | escape }}</code> mit der Zeile <code class="language-plaintext highlighter-rouge">{{ site.title[lang] | escape }}</code> ersetzen.</p>
+
+<p>Die Beschreibung wird in der <code class="language-plaintext highlighter-rouge">footer.html</code>-Datei genutzt. Daher wiederholen wir die gleichen Schritte dort, aber ersetzen die Zeile <code class="language-plaintext highlighter-rouge">{{ site.description | escape }}</code> mit <code class="language-plaintext highlighter-rouge">{{ site.description[lang] | escape }}</code>.</p>
+
+<h3 id="schritt-4-lokalisiere-den-titel-tag">Schritt 4: Lokalisiere den Titel-Tag</h3>
+
+<p>Als nächsten Schritt müssen wir uns um den <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code>-Tag in Jekylls eingebautem SEO-Abschnitt kümmern, weil die Seitenbeschreibung dort ebenfalls genutzt wird. Der Titel-Tag wird von Suchmaschinen benötigt, aber auch von den meisten Browsern als Tab-Bezeichnung genutzt. Da wir Jekyll keinen modifizierten Titel mitgeben können, müssen wir den diesen dort deaktivieren und stattdessen unseren eigenen Titel-Tag ausgeben.</p>
+
+<p>Dafür müssen wir Minimas <code class="language-plaintext highlighter-rouge">head.html</code>-Datei überschreiben (und zusätzlich die <code class="language-plaintext highlighter-rouge">custom-head.html</code>-Datei, sonst gibt es eine Fehlermeldung). Kopiere also beide Dateien aus Minimas Repository in Dein <code class="language-plaintext highlighter-rouge">_includes</code>-Verzeichnis und bearbeite <code class="language-plaintext highlighter-rouge">head.html</code> (<code class="language-plaintext highlighter-rouge">custom-head.html</code> kannst Du unberührt lassen, aber später für weitere Anpassungen, z.B. ein Favicon, nutzen).</p>
+
+<p>Ersetze die Zeile <code class="language-plaintext highlighter-rouge">{%- seo -%}</code> mit <code class="language-plaintext highlighter-rouge">{%- seo title=false -%}</code>.</p>
+
+<blockquote>
+  <p>Aus irgendwelchen Gründen, die ich nicht weiter verfolgt habe, hat das Überschreiben von <code class="language-plaintext highlighter-rouge">head.html</code> zu einem korrupten Stylesheet-Link geführt. Ich musste die Zeile <code class="language-plaintext highlighter-rouge">&lt;link rel="stylesheet" href="/multilingual-github-pages/assets/css/style.css"&gt;</code> zu <code class="language-plaintext highlighter-rouge">&lt;link rel="stylesheet" href="/multilingual-github-pages/assets/main.css"&gt;</code> ändern, um das zu reparieren.</p>
+</blockquote>
+
+<p>Nun musst Du noch Deinen eigenen Titel-Tag in  <code class="language-plaintext highlighter-rouge">head.html</code> hinzufügen. Als erste Zeile lassen wir Jekyll wieder die Sprache wissen:</p>
+
+<p><code class="language-plaintext highlighter-rouge">{% assign lang = site.active_lang %}</code></p>
+
+<p>Dann füge den folgenden Code am besten vor der Zeile <code class="language-plaintext highlighter-rouge">{%- seo title=false -%}</code> ein:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;title&gt;
+  {% if page.title %}{{ page.title }} - {% endif %}
+  {% if site.title[lang] %}{{ site.title[lang] }}{% endif %}
+&lt;/title&gt;
+</code></pre></div></div>
+
+<p>Dadurch wird der Seitentitel gesetzt, falls im frontmatter der Datei definiert, und dann der lokalisierte Webseitentitel angehängt, getrennt durch einen Bindestrich.</p>
+
+<h3 id="schritt-5-lokalisiere-dein-hauptmenü">Schritt 5: Lokalisiere Dein Hauptmenü</h3>
+
+<p>In Minima kann man die Reihenfolge der angezeigten Menüeinträge in der <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei festlegen. Wir müssen dies separat für alle Sprachen machen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Top menu order
+header_pages:
+  en:
+    - about-en.md
+    - prerequisites-en.md
+    - part1-setup-en.md
+    - part2-maintain-en.md
+    - part3-multilingual-en.md
+  de:
+    - about-de.md
+    - prerequisites-de.md
+    - part1-setup-de.md
+    - part2-maintain-de.md
+    - part3-multilingual-de.md
+</code></pre></div></div>
+
+<p>Ändere danach in der <code class="language-plaintext highlighter-rouge">header.html</code>-Datei <code class="language-plaintext highlighter-rouge">{%- assign page_paths = site.header_pa</code>_<code class="language-plaintext highlighter-rouge">es | default: default_paths -%}</code> zu <code class="language-plaintext highlighter-rouge">{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}</code>.</p>
+
+<h3 id="schritt-6-lokalisiere-deine-seiten">Schritt 6: Lokalisiere Deine Seiten</h3>
+
+<p>Seiten werden lokalisiert, indem eine eigene Quelldatei pro Sprache angelegt und jeweils der Sprachcode an den Dateinamen angehängt wird. Mit Englisch als Haupt- und Deutsch als Zweitsprache, benötigen wir in diesem Tutorial für jede Seitenquelldatei eine <code class="language-plaintext highlighter-rouge">...-en.md</code>-Version und eine <code class="language-plaintext highlighter-rouge">...-de.md</code>-Version (gilt auch für <code class="language-plaintext highlighter-rouge">html</code>-Dateien).</p>
+
+<p>Zusätzlich muss jede dieser zusammengehörigen Dateien den identischen <code class="language-plaintext highlighter-rouge">permalink</code> und den passenden <code class="language-plaintext highlighter-rouge">lang</code>-Tag im Frontmatter haben.</p>
+
+<p>Benenne also z.B. <code class="language-plaintext highlighter-rouge">index.md</code> in <code class="language-plaintext highlighter-rouge">index-en.md</code> um und füge folgende Zeilen im Frontmatter hinzu:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: home
+permalink: /
+lang: en
+---
+</code></pre></div></div>
+
+<p>Dupliziere dann die Datei, speichere sie als <code class="language-plaintext highlighter-rouge">index-de.md</code>. Übersetze sie und ändere die Frontmatter zu:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: home
+permalink: /
+lang: de
+---
+</code></pre></div></div>
+
+<p>Wichtig: Der Permalink muss in allen zusammengehörigen Dateien identisch sein!</p>
+
+<p>Wiederhole diese Prozedur für alle zu übersetzenden Dateien, z.B. für <code class="language-plaintext highlighter-rouge">about.md</code>, das zu <code class="language-plaintext highlighter-rouge">about-en.md</code> wird mit folgendem Frontmatter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+title: About
+permalink: /about/
+lang: en
+---
+</code></pre></div></div>
+
+<p>Die <code class="language-plaintext highlighter-rouge">about-de.md</code>-Datei hat dann folgendes Frontmatter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+title: Über
+permalink: /about/
+lang: de
+---
+</code></pre></div></div>
+
+<h3 id="schritt-7-lokalisiere-deine-posts">Schritt 7: Lokalisiere Deine Posts</h3>
+
+<p>Lege im <code class="language-plaintext highlighter-rouge">_posts</code>-Ordner einen Unterordner mit dem Namen des Sprachkürzels für jede <em>zusätzliche</em> Sprache an (nicht für die Default-Sprache!). In meinem Fall ist das lediglich der Ordner <code class="language-plaintext highlighter-rouge">docs/_posts/de</code>. Kopiere alle Posts, die Du übersetzen willst, in diesen Ordner. Wenn Du einen weglässt, wird das Polyglot-Plugin die Datei der Default-Sprache nutzen (siehe den <code class="language-plaintext highlighter-rouge">Welcome to Jekyll</code>-Post in meiner Beispielseite, den ich zu Demozwecken nicht übersetzt habe).</p>
+
+<p>Ändere auf keinen Fall den Dateinamen der Posts im Sprachordner!</p>
+
+<p>Füge schließlich den <code class="language-plaintext highlighter-rouge">lang</code>-Tag im Frontmatter aller Posts hinzu (auch in denen der Default-Sprache).</p>
+
+<h3 id="schritt-8-füge-einen-sprachwechsler-hinzu">Schritt 8: Füge einen Sprachwechsler hinzu</h3>
+
+<p>Um den Nutzern das Wechseln der Sprache zu ermöglichen, benötigen wir einen Sprachwechsler im <code class="language-plaintext highlighter-rouge">header.html</code>. Füge folgenden Code vor dem schließenden <code class="language-plaintext highlighter-rouge">&lt;/header&gt;</code>-Tag hinzu:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+  {% assign is_first_language = true %}
+  <span class="c">&lt;!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  --&gt;</span>
+  {% for tongue in site.languages %}
+    {% if is_first_language == false %}|{% endif %}
+    <span class="nt">&lt;a</span> <span class="err">{%</span> <span class="na">if</span> <span class="na">tongue =</span><span class="s">=</span> <span class="na">site.active_lang</span> <span class="err">%}</span><span class="na">style=</span><span class="s">"font-weight: bold;"</span><span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span> <span class="err">{%</span> <span class="na">static_href</span> <span class="err">%}</span><span class="na">href=</span><span class="s">"{% if tongue == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ tongue }}{{page.url}}{% endif %}"</span><span class="err">{%</span> <span class="na">endstatic_href</span> <span class="err">%}</span> <span class="nt">&gt;</span>{{ tongue }}<span class="nt">&lt;/a&gt;</span>
+    {% assign is_first_language = false %}
+  {% endfor %}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Rolle Deine Seite mit dem <code class="language-plaintext highlighter-rouge">deploy.sh</code>-Script aus und Du solltest Deine erste mehrsprachige Jekyll-Webseite im Netz finden.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/multilingual-github-pages/de/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/multilingual-github-pages/de/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/ulricusr"><svg class="svg-icon"><use xlink:href="/multilingual-github-pages/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ulricusr</span></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

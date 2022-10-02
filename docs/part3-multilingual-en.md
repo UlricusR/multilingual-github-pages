@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Part III - Multilingual
-permalink: /part3-multilingual/
+permalink: "/part3-multilingual/"
 lang: en
----
 
+---
 ## Part III: Building the multi-lingual site
 
 Let's now build our multilingual site using the [Polyglot plugin](https://github.com/untra/polyglot). The site is based on Jekyll's `minima` theme, so if you use another theme, the steps might look different in detail, but should be rather similar.
@@ -13,18 +13,16 @@ Let's now build our multilingual site using the [Polyglot plugin](https://github
 
 Navigate to your publishing source directory `/docs` and add the following to your `Gemfile`:
 
-```
-group :jekyll_plugins do
-   gem "jekyll-polyglot"
-end
-```
+    group :jekyll_plugins do
+       gem "jekyll-polyglot"
+    end
 
-Alternatively, install the gem locally following the description in the Polyglot README. Then specify the plugin in your `_config.yml`:
+Alternatively, install the gem locally following the description in the Polyglot README.
 
-```
-plugins:
-  - jekyll-polyglot
-```
+Then specify the plugin in your `_config.yml`:
+
+    plugins:
+      - jekyll-polyglot
 
 Run `bundle install` to finalize the installation.
 
@@ -32,34 +30,28 @@ Run `bundle install` to finalize the installation.
 
 Please refer to the Polyglot README for details on the configuration. For my purposes (English as default language, German as second language), the following configuration in `_config.yml` was sufficient:
 
-```
-# Polyglot language plugin settings
-languages: ["en", "de"]
-default_lang: "en"
-exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
-parallel_localization: true
-```
+    # Polyglot language plugin settings
+    languages: ["en", "de"]
+    default_lang: "en"
+    exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
+    parallel_localization: true
 
 ### Step 3: Localize your metadata
 
 The site will use some metadata like the title or the description, which are stored in the `_config.yml` file. You need to add a language specific title and description:
 
-```
-title:
-  en: Multi-lingual GitHub Page
-  de: Mehrsprachige GitHub-Seite
-description:
-  en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
-  de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
-```
+    title:
+      en: Multi-lingual GitHub Page
+      de: Mehrsprachige GitHub-Seite
+    description:
+      en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
+      de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
 
 The title is used in the `header.html` file of the `minima` theme. Therefore we need to override the remote `header.html` file by creating a `_includes` folder in the top level publishing folder (here: `docs`) and save a copy there. Next, we need to let Jekyll know which language we're in by adding the following line as first line in `header.html`, which creates the variable `lang` and assigns the current language:
 
-```
-{% raw %}{% assign lang = site.active_lang %}{% endraw %}
-<header class="site-header">
-	...
-```
+    {% raw %}{% assign lang = site.active_lang %}{% endraw %}
+    <header class="site-header">
+    	...
 
 Finally, we need to modify the line containing `{% raw %}{{ site.title | escape }}{% endraw %}` with `{% raw %}{{ site.title[lang] | escape }}{% endraw %}`.
 
@@ -79,12 +71,10 @@ Finally, we'll have to add our own custom title in `head.html`. As very first li
 
 Then add the following code before the modified `{% raw %}{%- seo title=false -%}{% endraw %}` line:
 
-```
-{% raw %}<title>
-  {% if page.title %}{{ page.title }} - {% endif %}
-  {% if site.title[lang] %}{{ site.title[lang] }}{% endif %}
-</title>{% endraw %}
-```
+    {% raw %}<title>
+      {% if page.title %}{{ page.title }} - {% endif %}
+      {% if site.title[lang] %}{{ site.title[lang] }}{% endif %}
+    </title>{% endraw %}
 
 It will add the page title, if set in the frontmatter of the file, and then append the localized site title, separated by a slash.
 
@@ -92,22 +82,20 @@ It will add the page title, if set in the frontmatter of the file, and then appe
 
 Minima allows you to define the order of the top menu items by adding those to `_config.yml`. We need to do this for all languages:
 
-```
-# Top menu order
-header_pages:
-  en:
-    - about-en.md
-    - prerequisites-en.md
-    - part1-setup-en.md
-    - part2-maintain-en.md
-    - part3-multilingual-en.md
-  de:
-    - about-de.md
-    - prerequisites-de.md
-    - part1-setup-de.md
-    - part2-maintain-de.md
-    - part3-multilingual-de.md
-```
+    # Top menu order
+    header_pages:
+      en:
+        - about-en.md
+        - prerequisites-en.md
+        - part1-setup-en.md
+        - part2-maintain-en.md
+        - part3-multilingual-en.md
+      de:
+        - about-de.md
+        - prerequisites-de.md
+        - part1-setup-de.md
+        - part2-maintain-de.md
+        - part3-multilingual-de.md
 
 Next, in `header.html` change `{% raw %}{%- assign page_paths = site.header_pages | default: default_paths -%}{% endraw %}` to `{% raw %}{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}{% endraw %}`.
 
@@ -119,51 +107,43 @@ In addition, we need to add the identical `permalink` and a `lang` tag to the fr
 
 So, rename your `index.md` to `index-en.md` and add the following lines to the frontmatter:
 
-```
----
-layout: home
-permalink: /
-lang: en
----
-```
+    ---
+    layout: home
+    permalink: /
+    lang: en
+    ---
 
 Duplicate the file and save it as `index-de.md`. Translate the content and add the following lines to the frontmatter:
 
-```
----
-layout: home
-permalink: /
-lang: de
----
-```
+    ---
+    layout: home
+    permalink: /
+    lang: de
+    ---
 
 It is very important to have the permalink identical in all language files.
 
 Repeat the same procedure for all your pages. My `about.md`, for example, becomes `about-en.md` and has the following frontmatter:
 
-```
----
-layout: page
-title: About
-permalink: /about/
-lang: en
----
-```
+    ---
+    layout: page
+    title: About
+    permalink: /about/
+    lang: en
+    ---
 
 My `about-de.md` has the following frontmatter:
 
-```
----
-layout: page
-title: Über
-permalink: /about/
-lang: de
----
-```
+    ---
+    layout: page
+    title: Über
+    permalink: /about/
+    lang: de
+    ---
 
 ### Step 7: Localize your posts
 
-In the `_posts` folder, create a subfolder for each *additional* language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
+In the `_posts` folder, create a subfolder for each _additional_ language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
 
 Don't change the filename of the post in the language subfolder!
 

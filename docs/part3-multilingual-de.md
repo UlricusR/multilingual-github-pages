@@ -101,7 +101,7 @@ In Minima kann man die Reihenfolge der angezeigten Menüeinträge in der `_confi
 
 Ändere danach in der `header.html`-Datei `{% raw %}{%- assign page_paths = site.header_pa`_`es | default: default_paths -%}{% endraw %}` zu `{% raw %}{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}{% endraw %}`.
 
-### Step 7: Lokalisiere Deine Seiten
+### Schritt 6: Lokalisiere Deine Seiten
 
 Seiten werden lokalisiert, indem eine eigene Quelldatei pro Sprache angelegt und jeweils der Sprachcode an den Dateinamen angehängt wird. Mit Englisch als Haupt- und Deutsch als Zweitsprache, benötigen wir in diesem Tutorial für jede Seitenquelldatei eine `...-en.md`-Version und eine `...-de.md`-Version (gilt auch für `html`-Dateien).
 
@@ -143,13 +143,13 @@ Die `about-de.md`-Datei hat dann folgendes Frontmatter:
     lang: de
     ---
 
-### Step 7: Localize your posts
+### Schritt 7: Lokalisiere Deine Posts
 
-In the `_posts` folder, create a subfolder for each _additional_ language (not the default language!). In my case, I only created a `docs/_posts/de` folder. Copy all posts, which you want translated, into that folder. If you leave a post away, the Polyglot plugin will use the default language post instead (see the `Welcome to Jekyll` post in my sample site for a demonstration of this feature).
+Lege im `_posts`-Ordner einen Unterordner mit dem Namen des Sprachkürzels für jede _zusätzliche_ Sprache an (nicht für die Default-Sprache!). In meinem Fall ist das lediglich der Ordner `docs/_posts/de`. Kopiere alle Posts, die Du übersetzen willst, in diesen Ordner. Wenn Du einen weglässt, wird das Polyglot-Plugin die Datei der Default-Sprache nutzen (siehe den `Welcome to Jekyll`-Post in meiner Beispielseite, den ich zu Demozwecken nicht übersetzt habe).
 
-Don't change the filename of the post in the language subfolder!
+Ändere auf keinen Fall den Dateinamen der Posts im Sprachordner!
 
-Finally, add the `lang` tag in the frontmatter of all posts (also those in the default language).
+Füge schließlich den `lang`-Tag im Frontmatter aller Posts hinzu (auch in denen der Default-Sprache).
 
 ### Step 8: Add a language switcher
 

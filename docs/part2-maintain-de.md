@@ -3,7 +3,6 @@ layout: page
 title: Teil II - Wartung
 permalink: "/part2-maintain/"
 lang: de
-published: false
 
 ---
 ## Tell II: Aktualisiere Deine GitHub Pages Seite

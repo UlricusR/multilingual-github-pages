@@ -151,9 +151,9 @@ Lege im `_posts`-Ordner einen Unterordner mit dem Namen des Sprachkürzels für 
 
 Füge schließlich den `lang`-Tag im Frontmatter aller Posts hinzu (auch in denen der Default-Sprache).
 
-### Step 8: Add a language switcher
+### Schritt 8: Füge einen Sprachwechsler hinzu
 
-To enable the user to switch between languages, I added a language switcher in `header.html`. Add the following code before the closing `</header>` tag:
+Um den Nutzern das Wechseln der Sprache zu ermöglichen, benötigen wir einen Sprachwechsler im `header.html`. Füge folgenden Code vor dem schließenden `</header>`-Tag hinzu:
 
 ```html
 {% raw %}<div class="wrapper">
@@ -167,4 +167,4 @@ To enable the user to switch between languages, I added a language switcher in `
 </div>{% endraw %}
 ```
 
-Deploy your site using the `deploy.sh` script and you should be good to go with your first multilingual Jekyll site.
+Rolle Deine Seite mit dem `deploy.sh`-Script aus und Du solltest Deine erste mehrsprachige Jekyll-Webseite im Netz finden.

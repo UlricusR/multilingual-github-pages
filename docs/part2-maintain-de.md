@@ -5,27 +5,27 @@ permalink: "/part2-maintain/"
 lang: de
 
 ---
-## Tell II: Pflege Deine GitHub Pages Seite
+## Tell II: Aktualisiere Deine GitHub Pages Seite
 
-Ein Nachteil des ganzen Vorgehens ist, dass man die generierten Seitendateien separat einchecken und auf den `site` Remote Branch hochladen muss. Außerdem löscht Jekyll bei jedem neuen Built die `.nojekyll`-Datei, sodass wir sie jedes Mal neu anlegen müssen. Das wird schnell mühsam.
+Ein Nachteil des ganzen Vorgehens ist, dass man die generierten Seitendateien separat einchecken und auf den `site`-Remote-Branch hochladen muss. Außerdem löscht Jekyll bei jedem neuen Built die `.nojekyll`-Datei, sodass wir sie jedes Mal neu anlegen müssen. Das wird schnell mühsam.
 
-Daher habe ich ein `deploy.sh` bash script (für MacOS, ggf. anzupassen) vorbereitet, welches
+Daher habe ich ein `deploy.sh`-Bash-Script (für MacOS, ggf. auf's eigene System anzupassen) vorbereitet, welches
 
-1. adds, checks in and pushes the source files to the `master` branch of your remote repository,
-2. builds the site,
-3. creates the `.nojekyll` file in the `_site` folder and
-4. adds, checks in and pushed the site files to the `site` branch of your remote repository.
+1. die Quelldateien dem `master`-Branch hinzufügt, eincheckt und ins Remote-Repositoy hochlädt,
+2. die Seitendateien erstellt,
+3. die `.nojekyll`-Datei im `_site`-Ordner erstellt und
+4. die Seitendateien dem `site`-Branch des Remote-Repositorys hinzufügt.
 
-This is more or less the whole updating workflow, so you might also run these commands from the command line, if you do not want to use the script right from the beginning.
+Dies ist mehr oder weniger der gesamte Aktualisierungs-Workflow. Du kannst die Kommandos natürlich auch einzeln in der Kommandozeile ausführen.
 
-To execute the script, you need to set the user permissions before you run it.
+Um das Script ausführen zu können, musst Du die richtigen Benutzerrechte setzen:
 
     # Set execution permissions
     chmod u+x deploy.sh
     # Run the script
     ./deploy.sh
 
-The script will ask for a commit message (defaults to "Updated site") and also for the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) (defaults to `development`). You need to run it as `production`, if you for example want to include Google Analytics. Normally, GitHub Pages automatically sets the `production` environment, but as we build locally, we need to tell Jekyll ourselves.
+Das Script fragt nach einer Commit-Nachricht (Default: "Updated site") und auch nach dem [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) (Default: `development`). Du musst das Script im `production`-Environment laufen lassen, wenn Du z.B. Google Analytics nuten willst. Normalerweise setzt GitHub Pages automatisch das `production`-Environment, da wir aber lokal arbeiten, müssen wir es selbst setzen.
 
 ```bash
 #!/bin/bash

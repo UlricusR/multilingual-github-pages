@@ -101,13 +101,13 @@ In Minima kann man die Reihenfolge der angezeigten Menüeinträge in der `_confi
 
 Ändere danach in der `header.html`-Datei `{% raw %}{%- assign page_paths = site.header_pa`_`es | default: default_paths -%}{% endraw %}` zu `{% raw %}{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}{% endraw %}`.
 
-### Step 6: Localize your pages
+### Step 7: Lokalisiere Deine Seiten
 
-Pages are localized by adding one file per language and using the language code to extend the filename. With `en` being the default language and `de` the additional language for this example, we will need to have a `...-en.md` and a `...-de.md` version for each file we want to localize (also works with `html` files).
+Seiten werden lokalisiert, indem eine eigene Quelldatei pro Sprache angelegt und jeweils der Sprachcode an den Dateinamen angehängt wird. Mit Englisch als Haupt- und Deutsch als Zweitsprache, benötigen wir in diesem Tutorial für jede Seitenquelldatei eine `...-en.md`-Version und eine `...-de.md`-Version (gilt auch für `html`-Dateien).
 
-In addition, we need to add the identical `permalink` and a `lang` tag to the frontmatter of each file.
+Zusätzlich muss jede dieser zusammengehörigen Dateien den identischen `permalink` und den passenden `lang`-Tag im Frontmatter haben.
 
-So, rename your `index.md` to `index-en.md` and add the following lines to the frontmatter:
+Benenne also z.B. `index.md` in `index-en.md` um und füge folgende Zeilen im Frontmatter hinzu:
 
     ---
     layout: home
@@ -115,7 +115,7 @@ So, rename your `index.md` to `index-en.md` and add the following lines to the f
     lang: en
     ---
 
-Duplicate the file and save it as `index-de.md`. Translate the content and add the following lines to the frontmatter:
+Dupliziere dann die Datei, speichere sie als `index-de.md`. Übersetze sie und ändere die Frontmatter zu:
 
     ---
     layout: home
@@ -123,9 +123,9 @@ Duplicate the file and save it as `index-de.md`. Translate the content and add t
     lang: de
     ---
 
-It is very important to have the permalink identical in all language files.
+Wichtig: Der Permalink muss in allen zusammengehörigen Dateien identisch sein!
 
-Repeat the same procedure for all your pages. My `about.md`, for example, becomes `about-en.md` and has the following frontmatter:
+Wiederhole diese Prozedur für alle zu übersetzenden Dateien, z.B. für `about.md`, das zu `about-en.md` wird mit folgendem Frontmatter:
 
     ---
     layout: page
@@ -134,7 +134,7 @@ Repeat the same procedure for all your pages. My `about.md`, for example, become
     lang: en
     ---
 
-My `about-de.md` has the following frontmatter:
+Die `about-de.md`-Datei hat dann folgendes Frontmatter:
 
     ---
     layout: page

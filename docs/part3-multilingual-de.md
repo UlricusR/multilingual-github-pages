@@ -80,9 +80,9 @@ Dann füge den folgenden Code am besten vor der Zeile `{% raw %}{%- seo title=fa
 
 Dadurch wird der Seitentitel gesetzt, falls im frontmatter der Datei definiert, und dann der lokalisierte Webseitentitel angehängt, getrennt durch einen Bindestrich.
 
-### Step 5: Localize your main menu
+### Schritt 5: Lokalisiere Dein Hauptmenü
 
-Minima allows you to define the order of the top menu items by adding those to `_config.yml`. We need to do this for all languages:
+In Minima kann man die Reihenfolge der angezeigten Menüeinträge in der `_config.yml`-Datei festlegen. Wir müssen dies separat für alle Sprachen machen:
 
     # Top menu order
     header_pages:
@@ -99,7 +99,7 @@ Minima allows you to define the order of the top menu items by adding those to `
         - part2-maintain-de.md
         - part3-multilingual-de.md
 
-Next, in `header.html` change `{% raw %}{%- assign page_paths = site.header_pages | default: default_paths -%}{% endraw %}` to `{% raw %}{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}{% endraw %}`.
+Ändere danach in der `header.html`-Datei `{% raw %}{%- assign page_paths = site.header_pa`_`es | default: default_paths -%}{% endraw %}` zu `{% raw %}{%- assign page_paths = site.header_pages[lang] | default: default_paths -%}{% endraw %}`.
 
 ### Step 6: Localize your pages
 

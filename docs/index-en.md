@@ -8,4 +8,4 @@ lang: en
 ---
 GitHub Pages offers great possibilities to host static, version controlled homepages. One downside is the support for only a [limited amount of Jekyll-plugins](https://pages.github.com/versions/). I was especially interested in using the multi-language [Polyglot plugin](https://github.com/untra/polyglot), because my website needed to be available in English and German.
 
-As GitHub Pages does not support this specific plugin, I searched for workarounds. The most promising one I found in [Dani's Braindump blog](https://tiefenauer.github.io/blog/gh-pages-plugins/), which I applied with some modifications. I have described the procedure step-by-step in the README of [the related GitHub repository](https://github.com/UlricusR/multilingual-github-pages).
+As GitHub Pages does not support this specific plugin, I searched for workarounds. The most promising one I found in [Dani's Braindump blog](https://tiefenauer.github.io/blog/gh-pages-plugins/), which I applied with some modifications. I have described the procedure step-by-step on this website, which is at the same time the sample website for the project.

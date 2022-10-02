@@ -59,7 +59,7 @@ The description is used in the `footer.html` file, so simply repeat the steps ab
 
 ### Step 4: Localize your title tag
 
-As a last step, we have to take care of the `<title>` tag in Jekyll's built-in SEO section, because the site description is also used there. The title tag is used by search engines, but also by most browsers to name the browser tab. As we cannot pass a custom title to Jekyll's SEO section, we need to disable the display of the title there and create our own `<title>` tag instead.
+As next step, we have to take care of the `<title>` tag in Jekyll's built-in SEO section, because the site description is also used there. The title tag is used by search engines, but also by most browsers to name the browser tab. As we cannot pass a custom title to Jekyll's SEO section, we need to disable the display of the title there and create our own `<title>` tag instead.
 
 To do so, we need to override Minima's `head.html` (and along with it the `custom-head.html`, otherwise we'd run into an error when building the site). So copy those two files from Minima's `_includes` folder to your `_includes` folder and open `head.html` for editing (you can leave `custom-head.html` untouched, but may also use for further customizations like adding a favicon).
 

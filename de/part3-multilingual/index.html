@@ -107,7 +107,7 @@ parallel_localization: true
 
 <h3 id="schritt-3-lokalisiere-deine-metadaten">Schritt 3: Lokalisiere Deine Metadaten</h3>
 
-<p>Die Seite nutzt einige Metadaten wir Titel oder Beschreibung, die in der <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel und eine Beschreibung hinzufügen:</p>
+<p>Die Seite nutzt einige Metadaten wie Titel, Beschreibung und das lokalisierte Datumsformat, die in der <code class="language-plaintext highlighter-rouge">_config.yml</code>-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel, eine Beschreibung und ein Datumsformat hinzufügen:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title:
   en: Multi-lingual GitHub Page
@@ -115,6 +115,9 @@ parallel_localization: true
 description:
   en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
   de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+date_formats:
+  en: "%b. %e, %Y" # e.g.: Sep. 1, 2022
+  de: "%d.%m.%y" # e.g.: 1.9.22
 </code></pre></div></div>
 
 <p>Der Titel wird in der <code class="language-plaintext highlighter-rouge">header.html</code>-Datei des <code class="language-plaintext highlighter-rouge">minima</code>-Themas genutzt. Daher müssen wir dieses “überschreiben” (override), indem wir einen <code class="language-plaintext highlighter-rouge">_includes</code>-Ordner im Veröffentlichungsquellverzeichnis <code class="language-plaintext highlighter-rouge">docs</code> anlegen und dort eine Kopie der Datei aus dem Repositorys des Themas speichern. Dann müssen wir Jekyll in der ersten Zeile der Datei die Sprache wissen lassen, in der wir uns befinden, indem wir diese der Variablen <code class="language-plaintext highlighter-rouge">lang</code> zuweisen:</p>
@@ -127,6 +130,8 @@ description:
 <p>Nun müssen wir noch die Zeile <code class="language-plaintext highlighter-rouge">{{ site.title | escape }}</code> mit der Zeile <code class="language-plaintext highlighter-rouge">{{ site.title[lang] | escape }}</code> ersetzen.</p>
 
 <p>Die Beschreibung wird in der <code class="language-plaintext highlighter-rouge">footer.html</code>-Datei genutzt. Daher wiederholen wir die gleichen Schritte dort, aber ersetzen die Zeile <code class="language-plaintext highlighter-rouge">{{ site.description | escape }}</code> mit <code class="language-plaintext highlighter-rouge">{{ site.description[lang] | escape }}</code>.</p>
+
+<p>Das Datumsformat wird in <code class="language-plaintext highlighter-rouge">home.html</code> und <code class="language-plaintext highlighter-rouge">post.html</code> im Minima <code class="language-plaintext highlighter-rouge">_layouts</code>-Ordner benutzt. Lege also Deinen eigenen <code class="language-plaintext highlighter-rouge">_layouts</code>-Ordner an und kopiere beide Dateien dort hin. Füge dann in jeder Datei die Zeile <code class="language-plaintext highlighter-rouge">{% assign lang = site.active_lang %}</code> am Anfang hinzu, wie oben, und ersetze schließlich die Zeile <code class="language-plaintext highlighter-rouge">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}</code> mit <code class="language-plaintext highlighter-rouge">{%- assign date_format = site.date_formats[lang] | default: "%b %-d, %Y" -%}</code>.</p>
 
 <h3 id="schritt-4-lokalisiere-den-titel-tag">Schritt 4: Lokalisiere den Titel-Tag</h3>
 

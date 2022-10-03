@@ -107,7 +107,7 @@ parallel_localization: true
 
 <h3 id="step-3-localize-your-metadata">Step 3: Localize your metadata</h3>
 
-<p>The site will use some metadata like the title or the description, which are stored in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. You need to add a language specific title and description:</p>
+<p>The site will use some metadata like the title, the description and the localized date format, which are stored in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. You need to add a language specific title, description and date format:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title:
   en: Multi-lingual GitHub Page
@@ -115,6 +115,9 @@ parallel_localization: true
 description:
   en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
   de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+date_formats:
+  en: "%b. %e, %Y" # e.g.: Sep. 1, 2022
+  de: "%d.%m.%y" # e.g.: 1.9.22
 </code></pre></div></div>
 
 <p>The title is used in the <code class="language-plaintext highlighter-rouge">header.html</code> file of the <code class="language-plaintext highlighter-rouge">minima</code> theme. Therefore we need to override the remote <code class="language-plaintext highlighter-rouge">header.html</code> file by creating a <code class="language-plaintext highlighter-rouge">_includes</code> folder in the top level publishing folder (here: <code class="language-plaintext highlighter-rouge">docs</code>) and save a copy there. Next, we need to let Jekyll know which language we’re in by adding the following line as first line in <code class="language-plaintext highlighter-rouge">header.html</code>, which creates the variable <code class="language-plaintext highlighter-rouge">lang</code> and assigns the current language:</p>
@@ -127,6 +130,8 @@ description:
 <p>Finally, we need to modify the line containing <code class="language-plaintext highlighter-rouge">{{ site.title | escape }}</code> with <code class="language-plaintext highlighter-rouge">{{ site.title[lang] | escape }}</code>.</p>
 
 <p>The description is used in the <code class="language-plaintext highlighter-rouge">footer.html</code> file, so simply repeat the steps above, but replace <code class="language-plaintext highlighter-rouge">{{ site.description | escape }}</code> with <code class="language-plaintext highlighter-rouge">{{ site.description[lang] | escape }}</code>.</p>
+
+<p>The date format is used in both the <code class="language-plaintext highlighter-rouge">home.html</code> as well as the <code class="language-plaintext highlighter-rouge">post.html</code> in the Minima <code class="language-plaintext highlighter-rouge">_layouts</code> folder. So, create your own <code class="language-plaintext highlighter-rouge">_layouts</code> folder and copy the two files there. Then add in each file the <code class="language-plaintext highlighter-rouge">{% assign lang = site.active_lang %}</code> line in the beginning, just like above, and finally replace the lines containing <code class="language-plaintext highlighter-rouge">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}</code> with <code class="language-plaintext highlighter-rouge">{%- assign date_format = site.date_formats[lang] | default: "%b %-d, %Y" -%}</code>.</p>
 
 <h3 id="step-4-localize-your-title-tag">Step 4: Localize your title tag</h3>
 

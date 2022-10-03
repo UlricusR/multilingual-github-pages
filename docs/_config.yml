@@ -43,6 +43,10 @@ default_lang: "en"
 exclude_from_localization: ["assets", "javascript", "images", "css", "public"]
 parallel_localization: true
 
+date_formats:
+  en: "%b. %e, %Y" # e.g.: Sep. 1, 2022
+  de: "%d.%m.%y" # e.g.: 1.9.22
+
 # Google Analytics
 google_analytics: G-9E8TF530YL
 

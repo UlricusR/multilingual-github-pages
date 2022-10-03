@@ -38,7 +38,7 @@ Bitte lies im Polyglot README nach, wie man das Plugin konfiguriert. Für meine 
 
 ### Schritt 3: Lokalisiere Deine Metadaten
 
-Die Seite nutzt einige Metadaten wir Titel oder Beschreibung, die in der `_config.yml`-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel und eine Beschreibung hinzufügen:
+Die Seite nutzt einige Metadaten wie Titel, Beschreibung und das lokalisierte Datumsformat, die in der `_config.yml`-Datei gespeichert sind. Du musst jeweils einen sprachspezifischen Titel, eine Beschreibung und ein Datumsformat hinzufügen:
 
     title:
       en: Multi-lingual GitHub Page
@@ -46,6 +46,9 @@ Die Seite nutzt einige Metadaten wir Titel oder Beschreibung, die in der `_confi
     description:
       en: A sample multi-lingual GitHub Page built with a Jekyll plugin not supported by GitHub Pages.
       de: Eine mehrsprachige Demoseite erstellt mit einem von GitHub Pages nicht unterstützten Jekyll-Plugin
+    date_formats:
+      en: "%b. %e, %Y" # e.g.: Sep. 1, 2022
+      de: "%d.%m.%y" # e.g.: 1.9.22
 
 Der Titel wird in der `header.html`-Datei des `minima`-Themas genutzt. Daher müssen wir dieses "überschreiben" (override), indem wir einen `_includes`-Ordner im Veröffentlichungsquellverzeichnis `docs` anlegen und dort eine Kopie der Datei aus dem Repositorys des Themas speichern. Dann müssen wir Jekyll in der ersten Zeile der Datei die Sprache wissen lassen, in der wir uns befinden, indem wir diese der Variablen `lang` zuweisen:
 
@@ -56,6 +59,8 @@ Der Titel wird in der `header.html`-Datei des `minima`-Themas genutzt. Daher mü
 Nun müssen wir noch die Zeile `{% raw %}{{ site.title | escape }}{% endraw %}` mit der Zeile `{% raw %}{{ site.title[lang] | escape }}{% endraw %}` ersetzen.
 
 Die Beschreibung wird in der `footer.html`-Datei genutzt. Daher wiederholen wir die gleichen Schritte dort, aber ersetzen die Zeile `{% raw %}{{ site.description | escape }}{% endraw %}` mit `{% raw %}{{ site.description[lang] | escape }}{% endraw %}`.
+
+Das Datumsformat wird in `home.html` und `post.html` im Minima `_layouts`-Ordner benutzt. Lege also Deinen eigenen `_layouts`-Ordner an und kopiere beide Dateien dort hin. Füge dann in jeder Datei die Zeile `{% raw %}{% assign lang = site.active_lang %}{% endraw %}` am Anfang hinzu, wie oben, und ersetze schließlich die Zeile `{% raw %}{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}{% endraw %}` mit `{% raw %}{%- assign date_format = site.date_formats[lang] | default: "%b %-d, %Y" -%}{% endraw %}`.
 
 ### Schritt 4: Lokalisiere den Titel-Tag
 

@@ -48,9 +48,6 @@ date_formats:
   en: "%b. %e, %Y" # e.g.: Sep. 1, 2022
   de: "%d.%m.%y" # e.g.: 1.9.22
 
-# Google Analytics
-google_analytics: G-9E8TF530YL
-
 # Top menu order
 header_pages:
   en:

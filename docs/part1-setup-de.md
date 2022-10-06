@@ -11,6 +11,15 @@ lang: de
 
 Erstelle ein neues GitHub-Repository. Es wird automatisch den `main`-Branch anlegen. Ich habe diesen zu `master` umbenannt. Mach auch Du das und klone ihn dann auf Deinen Computer (oder behalte `main` bei, ersetze dann aber alle `master` in diesem Tutorial durch `main`).
 
+Solltest Du die Seite in einem bestehenden Repository hinzufügen wollen, wird empfohlen, die Seitenquelldateien in einem *leeren, nicht-verbundenen* Branch, einem sogenannten *orphan*-Branch zu tun. Wir könnten diesen `site-sources` nennen:
+
+```
+git checkout --orphan site-sources
+git rm -rf .
+```
+
+Solltest Du diesen Weg nehmen, ersetze bitte alle Anweisungen dieses Tutorials, die sich auf den `master`-Branch beziehen, mit dem `site-sources`-Branch (oder wie auch immer er bei Dir heißt).
+
 ### Schritt 2: Erstelle einen Ordner für Deine Quelldateien
 
 Wechsle in Dein lokales Repository (Du müsstest im master-Branch sein) und erstelle ein `/docs`-Verzeichnis.

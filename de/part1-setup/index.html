@@ -68,6 +68,14 @@
 
 <p>Erstelle ein neues GitHub-Repository. Es wird automatisch den <code class="language-plaintext highlighter-rouge">main</code>-Branch anlegen. Ich habe diesen zu <code class="language-plaintext highlighter-rouge">master</code> umbenannt. Mach auch Du das und klone ihn dann auf Deinen Computer (oder behalte <code class="language-plaintext highlighter-rouge">main</code> bei, ersetze dann aber alle <code class="language-plaintext highlighter-rouge">master</code> in diesem Tutorial durch <code class="language-plaintext highlighter-rouge">main</code>).</p>
 
+<p>Solltest Du die Seite in einem bestehenden Repository hinzufügen wollen, wird empfohlen, die Seitenquelldateien in einem <em>leeren, nicht-verbundenen</em> Branch, einem sogenannten <em>orphan</em>-Branch zu tun. Wir könnten diesen <code class="language-plaintext highlighter-rouge">site-sources</code> nennen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout --orphan site-sources
+git rm -rf .
+</code></pre></div></div>
+
+<p>Solltest Du diesen Weg nehmen, ersetze bitte alle Anweisungen dieses Tutorials, die sich auf den <code class="language-plaintext highlighter-rouge">master</code>-Branch beziehen, mit dem <code class="language-plaintext highlighter-rouge">site-sources</code>-Branch (oder wie auch immer er bei Dir heißt).</p>
+
 <h3 id="schritt-2-erstelle-einen-ordner-für-deine-quelldateien">Schritt 2: Erstelle einen Ordner für Deine Quelldateien</h3>
 
 <p>Wechsle in Dein lokales Repository (Du müsstest im master-Branch sein) und erstelle ein <code class="language-plaintext highlighter-rouge">/docs</code>-Verzeichnis.</p>

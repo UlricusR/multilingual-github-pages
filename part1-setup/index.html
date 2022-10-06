@@ -68,6 +68,14 @@
 
 <p>Create a new GitHub repository. This will normally leave you with a <code class="language-plaintext highlighter-rouge">main</code> branch. Rename this to <code class="language-plaintext highlighter-rouge">master</code> and clone it to your computer (or keep it, but then replace all the <code class="language-plaintext highlighter-rouge">master</code> instructions below with <code class="language-plaintext highlighter-rouge">main</code>).</p>
 
+<p>Alternatively, if you want to add the site to an existing repository, it recommended to host the source files on a separate <em>empty, unrelated</em> branch, a so-called <em>orphan</em> branch. We might call it <code class="language-plaintext highlighter-rouge">site-sources</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout --orphan site-sources
+git rm -rf .
+</code></pre></div></div>
+
+<p>If you choose to go this way, please replace all the commands in this tutorial running on the <code class="language-plaintext highlighter-rouge">master</code> branch with the <code class="language-plaintext highlighter-rouge">site-sources</code> branch (or whatever you called it).</p>
+
 <h3 id="step-2-create-a-folder-for-your-sources">Step 2: Create a folder for your sources</h3>
 
 <p>Navigate to your local repository (you’re in the master branch) and create the <code class="language-plaintext highlighter-rouge">/docs</code> folder.</p>
